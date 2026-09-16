@@ -1223,8 +1223,9 @@
           <span class="field-error" id="errPhone"></span>
         </div>
         <div class="field">
-          <label for="orderEmail">Email <span class="field-help">(optionnel)</span></label>
-          <input type="email" id="orderEmail" name="orderEmail" autocomplete="email">
+          <label for="orderEmail">Email</label>
+          <input type="email" id="orderEmail" name="orderEmail" autocomplete="email" required aria-describedby="errEmail">
+          <span class="field-error" id="errEmail"></span>
         </div>
 
         <div class="field">
@@ -1531,13 +1532,21 @@
     var EMAILJS_SERVICE_ID = 'service_h02ps8r';
     var EMAILJS_TEMPLATE_ID = 'template_i4rxrj9';
     var EMAILJS_PUBLIC_KEY = '4bKFIGdPPRbKI3Awe';
+    // Gabarit dédié à la confirmation envoyée au CLIENT (adressé à {{customer_email}}, copy
+    // différente du gabarit ci-dessus qui, lui, part toujours vers Farouk). Reste un placeholder
+    // tant que ce template n'a pas été créé sur EmailJS — dans ce cas la confirmation client est
+    // simplement sautée (customerEmailjsReady reste false), sans jamais affecter l'email admin
+    // ci-dessus ni l'état de confirmation affiché à l'utilisateur.
+    var EMAILJS_CUSTOMER_TEMPLATE_ID = 'YOUR_EMAILJS_CUSTOMER_TEMPLATE_ID';
     var emailjsReady = false;
+    var customerEmailjsReady = false;
     try{
       if(window.emailjs && EMAILJS_PUBLIC_KEY.indexOf('YOUR_') !== 0){
         window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
         emailjsReady = true;
+        customerEmailjsReady = EMAILJS_CUSTOMER_TEMPLATE_ID.indexOf('YOUR_') !== 0;
       }
-    }catch(e){ emailjsReady = false; }
+    }catch(e){ emailjsReady = false; customerEmailjsReady = false; }
 
     function setConfirmMode(mode){
       if(confirmAutoState){ confirmAutoState.hidden = mode !== 'auto'; }
@@ -1754,13 +1763,20 @@
 
       var name = orderName.value.trim();
       var phone = orderPhone.value.trim();
+      var email = orderEmail.value.trim();
       var retrait = document.querySelector('input[name="retrait"]:checked');
       var address = orderAddress.value.trim();
       var date = orderDate.value;
       var paiement = document.querySelector('input[name="paiement"]:checked');
 
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+      var phoneDigits = phone.replace(/[^0-9]/g, '');
+
       if(!name){ setError('errName', 'Merci d’indiquer ton nom complet.', orderName, focusState); valid = false; }
       if(!phone){ setError('errPhone', 'Merci d’indiquer un numéro de téléphone.', orderPhone, focusState); valid = false; }
+      else if(phoneDigits.length < 8){ setError('errPhone', 'Ce numéro ne semble pas valide (au moins 8 chiffres).', orderPhone, focusState); valid = false; }
+      if(!email){ setError('errEmail', 'Merci d’indiquer ton adresse email.', orderEmail, focusState); valid = false; }
+      else if(!emailPattern.test(email)){ setError('errEmail', 'Cette adresse email ne semble pas valide.', orderEmail, focusState); valid = false; }
       if(!date){ setError('errDate', 'Merci de choisir une date souhaitée.', orderDate, focusState); valid = false; }
       if(!paiement){ setError('errPaiement', 'Merci de choisir un mode de paiement.', document.getElementById('paiementEspeces'), focusState); valid = false; }
       if(retrait && retrait.value === 'livraison' && !address){
@@ -1797,7 +1813,7 @@
         '',
         'Nom complet : ' + name,
         'Téléphone : ' + phone,
-        'Email : ' + (orderEmail.value.trim() || '—'),
+        'Email : ' + email,
         'Mode de retrait : ' + retraitLabel + (retrait.value === 'livraison' ? ('\nAdresse de livraison : ' + address) : ''),
         'Date souhaitée : ' + toFRDate(new Date(date + 'T00:00:00')),
         'Mode de paiement : ' + (paiementLabels[paiement.value] || paiement.value),
@@ -1824,7 +1840,7 @@
           prep_time: currentProduct.prep,
           customer_name: name,
           customer_phone: phone,
-          customer_email: orderEmail.value.trim() || '—',
+          customer_email: email,
           pickup_mode: retraitLabel,
           delivery_address: retrait.value === 'livraison' ? address : '—',
           order_date: toFRDate(new Date(date + 'T00:00:00')),
@@ -1835,6 +1851,14 @@
           function(){ setConfirmMode('auto'); showStep('confirm'); },
           function(){ setConfirmMode('manual'); showStep('confirm'); }
         );
+        // Confirmation envoyée au client, en parallèle et indépendamment de l'email à Farouk
+        // ci-dessus : un échec ici ne doit jamais changer l'état de confirmation affiché à
+        // l'utilisateur (déjà décidé par le .then() juste au-dessus), donc aucun impact sur
+        // showStep/setConfirmMode — on ignore simplement l'erreur si ce template n'est pas encore
+        // configuré ou si l'envoi échoue.
+        if(customerEmailjsReady){
+          window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_CUSTOMER_TEMPLATE_ID, templateParams).catch(function(){});
+        }
       } else {
         setConfirmMode('manual');
         showStep('confirm');
