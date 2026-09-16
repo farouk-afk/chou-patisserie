@@ -1,0 +1,230 @@
+<title>Audit Chou Pâtisserie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F4EE; --paper-raised:#FFFFFF; --ink:#211D18; --ink-soft:#5B564C; --ink-muted:#8A8377;
+    --line:rgba(33,29,24,0.13); --line-strong:rgba(33,29,24,0.24);
+    --accent:#7A5C3E; --accent-soft:#EFE6D8;
+    --critique:#B23B3B; --critique-bg:#F7E7E5;
+    --important:#A66A12; --important-bg:#F6EBD7;
+    --mineur:#3A62A0; --mineur-bg:#E7EDF7;
+    --info:#5B564C; --info-bg:#EAE7DF;
+    --good:#3F7A4F; --good-bg:#E5F0E6;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171410; --paper-raised:#211C16; --ink:#F3EEE4; --ink-soft:#C7BFAF; --ink-muted:#928A78;
+      --line:rgba(243,238,228,0.14); --line-strong:rgba(243,238,228,0.26);
+      --accent:#D8B98A; --accent-soft:#2E2619;
+      --critique:#E58B85; --critique-bg:#3A2220;
+      --important:#E0B15E; --important-bg:#3A2E17;
+      --mineur:#8FB0E0; --mineur-bg:#1E2A3D;
+      --info:#C7BFAF; --info-bg:#26221A;
+      --good:#8FCB9C; --good-bg:#1D2B20;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171410; --paper-raised:#211C16; --ink:#F3EEE4; --ink-soft:#C7BFAF; --ink-muted:#928A78;
+    --line:rgba(243,238,228,0.14); --line-strong:rgba(243,238,228,0.26);
+    --accent:#D8B98A; --accent-soft:#2E2619;
+    --critique:#E58B85; --critique-bg:#3A2220;
+    --important:#E0B15E; --important-bg:#3A2E17;
+    --mineur:#8FB0E0; --mineur-bg:#1E2A3D;
+    --info:#C7BFAF; --info-bg:#26221A;
+    --good:#8FCB9C; --good-bg:#1D2B20;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Work Sans',-apple-system,sans-serif; line-height:1.6; padding-inline:0; }
+  .wrap{ max-width:920px; margin-inline:auto; padding:48px clamp(18px,5vw,40px) 100px; }
+  h1,h2,h3{ font-family:'Source Serif 4',Georgia,serif; font-weight:600; color:var(--ink); text-wrap:balance; margin:0; }
+  code, .mono{ font-family:'IBM Plex Mono',monospace; }
+  a{ color:var(--accent); }
+  p{ color:var(--ink-soft); margin:0; }
+
+  header.top{ margin-bottom:8px; }
+  .eyebrow{ font-size:0.78rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+  h1{ font-size:clamp(1.8rem,4vw,2.5rem); line-height:1.15; }
+  .lede{ margin-top:14px; font-size:1.05rem; max-width:66ch; }
+  .meta-line{ margin-top:18px; font-size:0.85rem; color:var(--ink-muted); display:flex; gap:18px; flex-wrap:wrap; }
+
+  .stats{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:36px 0; }
+  .stat{ background:var(--paper-raised); border:1px solid var(--line); border-radius:12px; padding:16px 14px; }
+  .stat b{ display:block; font-family:'Source Serif 4',serif; font-size:1.9rem; line-height:1; margin-bottom:6px; }
+  .stat span{ font-size:0.78rem; color:var(--ink-muted); text-transform:uppercase; letter-spacing:0.04em; }
+  .stat.critique b{ color:var(--critique); } .stat.important b{ color:var(--important); }
+  .stat.mineur b{ color:var(--mineur); } .stat.info b{ color:var(--info); }
+
+  section{ margin-top:56px; }
+  .section-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:20px; border-bottom:1px solid var(--line-strong); padding-bottom:14px; }
+  .section-head h2{ font-size:1.4rem; }
+  .section-head .count{ font-size:0.85rem; color:var(--ink-muted); font-family:'IBM Plex Mono',monospace; }
+
+  .priority-list{ display:flex; flex-direction:column; gap:10px; counter-reset:pri; }
+  .priority-item{ counter-increment:pri; display:flex; gap:14px; background:var(--paper-raised); border:1px solid var(--line); border-radius:12px; padding:14px 16px; align-items:flex-start; }
+  .priority-item::before{ content:counter(pri); font-family:'Source Serif 4',serif; font-weight:600; font-size:1.1rem; color:var(--accent); background:var(--accent-soft); width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .priority-item .txt{ flex:1; }
+  .priority-item .txt b{ color:var(--ink); font-weight:600; }
+  .priority-item .txt p{ margin-top:4px; font-size:0.92rem; }
+
+  .finding{ background:var(--paper-raised); border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-bottom:12px; }
+  .finding-top{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:8px; }
+  .badge{ font-size:0.7rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; padding:4px 10px; border-radius:100px; }
+  .badge.critique{ background:var(--critique-bg); color:var(--critique); }
+  .badge.important{ background:var(--important-bg); color:var(--important); }
+  .badge.mineur{ background:var(--mineur-bg); color:var(--mineur); }
+  .badge.info{ background:var(--info-bg); color:var(--info); }
+  .badge.good{ background:var(--good-bg); color:var(--good); }
+  .loc{ font-size:0.8rem; color:var(--ink-muted); }
+  .finding p{ font-size:0.94rem; }
+  .finding .fix{ margin-top:8px; font-size:0.9rem; padding-top:8px; border-top:1px dashed var(--line); }
+  .finding .fix b{ color:var(--ink); font-weight:600; }
+
+  .bench{ background:var(--accent-soft); border-radius:14px; padding:22px 24px; margin-top:20px; }
+  .bench h3{ font-size:1.05rem; margin-bottom:10px; }
+  .bench ul{ margin:0; padding-left:20px; }
+  .bench li{ margin-bottom:8px; font-size:0.94rem; color:var(--ink-soft); }
+  .bench li b{ color:var(--ink); }
+
+  .sources{ margin-top:56px; padding-top:20px; border-top:1px solid var(--line); font-size:0.82rem; color:var(--ink-muted); }
+  .sources a{ color:var(--ink-muted); }
+
+  @media (max-width:640px){
+    .stats{ grid-template-columns:repeat(2,1fr); }
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Audit technique &amp; comparatif</p>
+    <h1>Chou Pâtisserie — état des lieux du site</h1>
+    <p class="lede">Revue complète du code (<code>index.html</code>), comparée aux standards actuels des sites de pâtisserie/e-commerce en 2026. Objectif : repérer ce qui casse réellement l'expérience, ce qui freine la conversion, et ce qui peut attendre.</p>
+    <div class="meta-line">
+      <span>44 constats</span>
+      <span>7 catégories</span>
+      <span>Revue statique du code — pas de mesure Lighthouse live</span>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat critique"><b>3</b><span>Critique</span></div>
+    <div class="stat important"><b>19</b><span>Important</span></div>
+    <div class="stat mineur"><b>10</b><span>Mineur</span></div>
+    <div class="stat info"><b>12</b><span>Info</span></div>
+  </div>
+
+  <section>
+    <div class="section-head"><h2>À corriger en premier</h2><span class="count">10 points, impact le plus fort</span></div>
+    <div class="priority-list">
+      <div class="priority-item"><div class="txt"><b>Le fichier n'a ni <code>&lt;!DOCTYPE&gt;</code>, ni <code>&lt;html&gt;</code>, ni balise viewport.</b><p>C'est le problème le plus grave du site : sans <code>&lt;meta name="viewport"&gt;</code>, un vrai téléphone affiche la page dézoomée et <b>aucune des media queries responsive ne se déclenche</b>. Tout le travail mobile fait jusqu'ici ne s'applique qu'à l'intérieur de l'aperçu Artifact (qui ajoute cette balise pour vous), pas à un déploiement réel du fichier.</p></div></div>
+      <div class="priority-item"><div class="txt"><b>Les boutons du bloc final "Une envie de sucré ?" pointent vers <code>href="#"</code>.</b><p>Le tout dernier appel à l'action du site ("Commander maintenant", "Nous écrire") ne fait rien d'utile — juste remonter en haut de page. Le client qui arrive jusque-là et clique repart bredouille.</p></div></div>
+      <div class="priority-item"><div class="txt"><b>Aucune balise <code>&lt;meta name="description"&gt;</code> ni Open Graph.</b><p>Un partage du lien sur WhatsApp/Instagram/Facebook affichera une prévisualisation vide. C'est probablement le principal canal de commande pour une pâtisserie maison.</p></div></div>
+      <div class="priority-item"><div class="txt"><b>Contraste insuffisant sur le message d'erreur du formulaire et le badge "Signature".</b><p>Le texte qui explique pourquoi une commande a échoué (rose clair sur fond crème) est quasi illisible pour une partie des visiteurs — c'est justement le message le plus important à voir.</p></div></div>
+      <div class="priority-item"><div class="txt"><b>Le focus clavier est supprimé sur les champs du formulaire de commande.</b><p>Impossible de voir où on est quand on remplit la commande au clavier — un frein direct à l'accessibilité et, concrètement, à la conversion pour une partie des visiteurs.</p></div></div>
+      <div class="priority-item"><div class="txt"><b>Rien n'indique si l'email de commande s'est réellement ouvert.</b><p>Sur un appareil sans client mail configuré, le clic sur "Envoyer" ne fait rien de visible — mais l'écran affiche quand même "commande prête". Le client croit avoir réussi alors que rien n'est parti.</p></div></div>
+      <div class="priority-item"><div class="txt"><b>Aucune zone/frais de livraison, minimum de commande, ni délai de réponse annoncés.</b><p>Le formulaire propose une option "Livraison" sans jamais dire où elle est possible ni combien elle coûte. D'après Baymard Institute, l'incertitude sur ce type de politique cause à elle seule <b>17% des abandons</b> en e-commerce.</p></div></div>
+      <div class="priority-item"><div class="txt"><b>Le marquee et les flèches décoratives ne sont pas masqués aux lecteurs d'écran.</b><p><code>aria-hidden="true"</code> manquant — un lecteur d'écran lit deux fois le bandeau défilant et annonce "flèche" après chaque bouton.</p></div></div>
+      <div class="priority-item"><div class="txt"><b>Les erreurs de formulaire ne sont pas reliées à leur champ (<code>aria-describedby</code>).</b><p>Un lecteur d'écran signale qu'un champ est invalide mais ne lit jamais le message expliquant pourquoi.</p></div></div>
+      <div class="priority-item"><div class="txt"><b>Fermeture de la modale synchronisée par un <code>setTimeout(400)</code> codé en dur.</b><p>Si la durée de transition CSS change un jour sans toucher au JS (ou l'inverse), la modale se fermera au mauvais moment. Un événement <code>transitionend</code> serait plus robuste.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Comparé à ce qui se fait de mieux</h2></div>
+    <p>Recherche 2026 sur les sites de pâtisserie/boulangerie et les tunnels d'achat e-commerce — voir sources en bas de page.</p>
+    <div class="bench">
+      <h3>Ce que font les meilleurs sites de pâtisserie en ce moment</h3>
+      <ul>
+        <li><b>La photo fait la vente, pas le texte.</b> Macro-photographie ou vidéo montrant la texture (croustillant, fondant) avant même la description. → Vous l'avez déjà avec les vraies photos Unsplash ; la qualité tient la comparaison.</li>
+        <li><b>Mobile d'abord, sans exception.</b> 60 à 70% du trafic d'un site de pâtisserie vient du mobile. → C'est justement ce que le bug viewport (ci-dessus) compromet le plus directement : corrigez-le en priorité absolue.</li>
+        <li><b>Un chemin de commande très court, un bouton "Commander" visible partout.</b> → Présent (fiches produit → modale → formulaire), mais le CTA final cassé (<code>href="#"</code>) casse ce principe au pire endroit : la fin.</li>
+        <li><b>Catégorisation claire, navigation minimale.</b> → Le filtre par catégorie dans "Notre carte" correspond bien à cette attente.</li>
+      </ul>
+      <h3 style="margin-top:18px">Ce que font les meilleurs tunnels d'achat (au-delà du paiement en carte)</h3>
+      <ul>
+        <li><b>Signaux de confiance près du bouton d'action</b> : politique de retour/annulation, délai de réponse, zone de livraison — un lift mesuré de 4 à 7% sur la conversion rien qu'en affichant ces informations près du CTA (Baymard). → Actuellement absents du site.</li>
+        <li><b>Un minimum de friction déclarée à l'avance</b> (frais, délais, conditions) plutôt que découverte en cours de route. → Le temps de préparation est déjà bien affiché (bon point) ; la livraison/le minimum de commande manquent.</li>
+        <li><b>Chaque champ obligatoire dit clairement pourquoi il échoue.</b> → Techniquement présent mais peu lisible (contraste) et peu accessible (aria-describedby manquant), voir ci-dessus.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Performance</h2><span class="count">7 constats</span></div>
+    <div class="finding"><div class="finding-top"><span class="badge critique">Critique</span><span class="loc mono">index.html:1–5</span></div><p>Balise <code>&lt;meta name="viewport"&gt;</code> absente (pas de <code>&lt;head&gt;</code> du tout) — sans elle, les media queries mobiles ne se déclenchent jamais sur un vrai téléphone.</p><div class="fix"><b>Correctif :</b> ajouter <code>&lt;!DOCTYPE html&gt;&lt;html lang="fr"&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code> en tout début de fichier.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">assets/img/*.webp</span></div><p>Aucune image n'utilise <code>srcset</code>/<code>sizes</code> — le même fichier pleine résolution est servi à un médaillon de 120px comme à un affichage desktop large.</p><div class="fix"><b>Correctif :</b> générer 2 tailles par image (mobile/desktop) ou accepter le compromis actuel si le poids total reste raisonnable (~7 Mo pour 32 images).</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:194–204</span></div><p>Le titre du hero (candidat LCP le plus probable) démarre en <code>opacity:0</code> avec une animation retardée — Chrome ignore le contenu à opacité 0 pour le calcul du LCP, ce qui retarde artificiellement la mesure d'au moins ~0.3s.</p><div class="fix"><b>Correctif :</b> réduire fortement le délai sur ce seul élément, ou l'exclure du système d'entrée animée.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge mineur">Mineur</span><span class="loc mono">index.html:4</span></div><p>11 variantes de police chargées (6 Fraunces + 5 Manrope) — poids inutilement élevé et risque de CLS au chargement.</p><div class="fix"><b>Correctif :</b> ne garder que les graisses réellement utilisées dans le CSS.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge mineur">Mineur</span><span class="loc mono">index.html:634</span></div><p>Pas de <code>fetchpriority="high"</code> sur les photos du hero (déjà chargées en eager, mais sans priorité explicite).</p><div class="fix"><b>Correctif :</b> ajouter l'attribut sur la première image hero au minimum.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge good">Bon point</span></div><p>CLS bien maîtrisé : <code>aspect-ratio</code> systématique sur les conteneurs d'image, <code>loading="lazy"</code> correctement limité aux images sous la ligne de flottaison.</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span></div><p>Poids total exact non mesurable sans DevTools/Lighthouse en conditions réelles — à vérifier une fois le site déployé sur un vrai domaine.</p></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Accessibilité</h2><span class="count">13 constats</span></div>
+    <div class="finding"><div class="finding-top"><span class="badge critique">Critique</span><span class="loc mono">index.html:1</span></div><p>Pas de <code>&lt;html lang="fr"&gt;</code> — un lecteur d'écran peut prononcer tout le texte français avec un moteur anglais.</p><div class="fix"><b>Correctif :</b> même correctif que le point viewport ci-dessus.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:428</span></div><p><code>.field-error</code> en <code>--rose</code> sur fond clair ≈ 2.3:1 de contraste — bien en dessous du minimum de 4.5:1, sur le message d'erreur du formulaire.</p><div class="fix"><b>Correctif :</b> foncer la couleur d'erreur en thème clair uniquement.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:365, 84–89</span></div><p>Badge "Signature" et eyebrows sur fond <code>--cream-deep</code> ≈ 4.07:1, sous le seuil AA pour du petit texte gras.</p><div class="fix"><b>Correctif :</b> foncer <code>--caramel-deep</code> en mode clair, ou vérifier au cas par cas selon le fond de section.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:426</span></div><p>Le focus natif est supprimé sur les champs texte du formulaire de commande (<code>outline:none</code>), remplacé seulement par un léger changement de bordure.</p><div class="fix"><b>Correctif :</b> réutiliser le pattern <code>:focus-visible{ outline:2px solid ... }</code> déjà présent sur <code>.radio-pill</code>.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:960</span></div><p>Le bandeau marquee n'a pas <code>aria-hidden="true"</code> — le texte dupliqué (nécessaire à la boucle visuelle) est lu deux fois par un lecteur d'écran.</p><div class="fix"><b>Correctif :</b> ajouter <code>aria-hidden="true"</code> sur <code>.marquee-wrap</code>.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:1063</span></div><p>Aucun champ du formulaire n'a <code>aria-describedby</code> reliant l'input à son message d'erreur.</p><div class="fix"><b>Correctif :</b> ajouter <code>aria-describedby="errName"</code> etc. sur chaque champ concerné.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:707, 726</span></div><p>Rupture de hiérarchie : <code>&lt;h2&gt;</code> suivi directement de dix-huit <code>&lt;h4&gt;</code> sans <code>&lt;h3&gt;</code> intermédiaire dans "Notre carte".</p><div class="fix"><b>Correctif :</b> remonter en <code>&lt;h3&gt;</code> ou ajouter un sous-titre <code>h3</code> par catégorie.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge mineur">Mineur</span><span class="loc mono">index.html:624, 665...</span></div><p>Les flèches décoratives <code>→</code> ne sont pas masquées aux lecteurs d'écran ("flèche vers la droite" annoncée après chaque lien).</p><div class="fix"><b>Correctif :</b> <code>aria-hidden="true"</code> sur chaque <code>span.arrow</code>.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge mineur">Mineur</span><span class="loc mono">index.html:605</span></div><p>Le menu mobile est un simple <code>&lt;div&gt;</code>, pas un <code>&lt;nav&gt;</code>, incohérent avec la nav desktop qui en est un.</p><div class="fix"><b>Correctif :</b> <code>&lt;nav aria-label="Menu mobile"&gt;</code>.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span><span class="loc mono">index.html:1077</span></div><p>Groupes de radios en <code>role="radiogroup"</code> plutôt qu'un <code>&lt;fieldset&gt;&lt;legend&gt;</code> natif — fonctionne mais moins robuste.</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge good">Bon point</span></div><p>Tous les champs texte ont un vrai <code>&lt;label for&gt;</code> ; la modale a un vrai piège de focus, <code>role="dialog"</code>, restauration du focus à la fermeture ; les fiches produit sont accessibles au clavier.</p></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>SEO</h2><span class="count">5 constats</span></div>
+    <div class="finding"><div class="finding-top"><span class="badge critique">Critique</span></div><p>Aucune <code>&lt;meta name="description"&gt;</code>.</p><div class="fix"><b>Correctif :</b> une phrase décrivant l'offre (cookies, gâteaux, desserts artisanaux, Kouba, Alger).</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span></div><p>Aucune balise Open Graph/Twitter Card — un partage sur WhatsApp/Instagram affiche une prévisualisation vide.</p><div class="fix"><b>Correctif :</b> ajouter <code>og:title</code>, <code>og:description</code>, <code>og:image</code> (une des photos hero en 1200×630).</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span></div><p>Aucune donnée structurée schema.org (LocalBusiness/Bakery, Product).</p><div class="fix"><b>À considérer</b> une fois les prix définitifs validés.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span></div><p>Pas de favicon/manifest — provoque une requête 404 silencieuse dans tous les navigateurs.</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge good">Bon point</span></div><p>Un seul <code>&lt;h1&gt;</code> sur la page, structure globalement cohérente hors les deux ruptures citées plus haut.</p></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Sécurité &amp; confidentialité</h2><span class="count">3 constats</span></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span><span class="loc mono">index.html:1462–1531</span></div><p>Les données client (nom, téléphone, email, adresse) transitent par un <code>mailto:</code> généré côté client : aucun risque d'interception serveur, mais aucune mention sur le site de ce que deviennent ces informations.</p><div class="fix"><b>À considérer :</b> une ligne du type "ces informations servent uniquement à traiter ta commande".</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge good">Bon point</span></div><p>Aucune donnée financière sensible collectée — PayPal n'est qu'une préférence affichée, pas de champ carte/IBAN nulle part.</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge good">Bon point</span></div><p>Liste blanche de ressources externes limitée à Google Fonts — aucun tracker, aucune image hébergée hors <code>assets/img/</code>.</p></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Qualité de code</h2><span class="count">7 constats</span></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:1139–1603</span></div><p>Tout le JS vit dans une seule fonction de haut niveau : une erreur précoce (ex. dans le parallax) arrêterait l'exécution du reste, y compris le code de la modale de commande — sans aucun signal visible pour l'utilisateur.</p><div class="fix"><b>Correctif :</b> isoler les fonctionnalités indépendantes dans des blocs <code>try/catch</code> séparés.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:382, 1430</span></div><p>Durée de transition dupliquée entre CSS (<code>.4s</code>) et JS (<code>setTimeout(...,400)</code>) sans source commune.</p><div class="fix"><b>Correctif :</b> utiliser l'événement <code>transitionend</code> plutôt qu'un délai codé en dur.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge mineur">Mineur</span><span class="loc mono">index.html:288–291</span></div><p><code>.intro-mark</code> défini en CSS mais utilisé nulle part — résidu de l'ancien système SVG.</p><div class="fix"><b>Correctif :</b> supprimer la règle.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge mineur">Mineur</span><span class="loc mono">index.html:1161–1208</span></div><p><code>.c-card</code>/<code>.p-card</code> observés deux fois par deux IntersectionObserver différents (redondant, sans impact visible).</p><div class="fix"><b>Correctif :</b> simplifier le sélecteur générique pour ne garder que les classes <code>.reveal*</code>.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge mineur">Mineur</span></div><p>Trois <code>style=""</code> inline ponctuels contournent le système de classes existant.</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span><span class="loc mono">.claude/agents/design-director.md:14</span></div><p>La fiche de l'agent design-director décrit encore les desserts comme des "sprites SVG", ce qui contredit la réalité (photos WebP) et <code>CLAUDE.md</code>.</p><div class="fix"><b>Correctif :</b> mettre à jour la fiche agent pour éviter qu'un futur agent tente de revenir aux SVG.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge good">Bon point</span></div><p>Palette de couleurs entièrement pilotée par variables CSS, thème clair/sombre cohérent partout — aucune régression trouvée sur ce point malgré les nombreuses itérations du fichier.</p></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Mobile / responsive</h2><span class="count">4 constats</span></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:436, 1084</span></div><p>Les libellés longs des pastilles de paiement/retrait ("Espèces à la livraison / au retrait") risquent de passer sur deux lignes dans une pilule à <code>border-radius:100px</code> sur petit écran, cassant la forme.</p><div class="fix"><b>Correctif :</b> raccourcir les libellés ou abandonner la forme pilule si le texte peut wrapper.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span><span class="loc mono">index.html:1412</span></div><p><code>document.body.style.overflow='hidden'</code> pour bloquer le scroll pendant que la modale est ouverte — technique connue pour parfois mal se comporter sur iOS Safari.</p><div class="fix"><b>À tester</b> spécifiquement sur un vrai iPhone.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge good">Bon point</span></div><p><code>.modal-panel{width:min(640px,100%)}</code> + padding du fond donnent une largeur correcte même à 400px ; le filtre de "Notre carte" bascule proprement en défilement horizontal sous 640px.</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span></div><p><code>overflow-x:hidden</code> sur le <code>body</code> masque silencieusement tout dépassement — un vrai bug de layout pourrait donc passer inaperçu en test rapide plutôt que de se signaler par une scrollbar.</p></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Tunnel de commande</h2><span class="count">9 constats — informatif</span></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:973–974</span></div><p>Les boutons du bloc CTA final pointent vers <code>href="#"</code> — liens morts sur le dernier appel à l'action du site.</p><div class="fix"><b>Correctif :</b> pointer vers <code>#carte</code> ou un <code>mailto:</code>.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:999–1007</span></div><p>Dans le footer, l'adresse, les horaires et les liens sociaux pointent aussi vers <code>href="#"</code> — un clic déclenche un saut trompeur en haut de page.</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:1530</span></div><p>L'écran de confirmation s'affiche immédiatement après le clic sur "Envoyer", sans jamais vérifier que le lien <code>mailto:</code> a réellement ouvert un client mail.</p><div class="fix"><b>À considérer :</b> ajouter une note "si rien ne s'ouvre, contacte-moi directement à ..." en secours visible.</div></div>
+    <div class="finding"><div class="finding-top"><span class="badge important">Important</span><span class="loc mono">index.html:1132</span></div><p>Le texte de confirmation ne précise aucun délai de réponse attendu ni quoi faire si le client n'a pas de nouvelles.</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span></div><p>Aucune information sur les zones ou frais de livraison, alors que l'option "Livraison" existe dans le formulaire.</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span></div><p>Aucun montant minimum de commande mentionné.</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span></div><p>Aucune liste d'allergènes/ingrédients par produit (seul un champ libre "message" existe).</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span></div><p>Aucune politique d'annulation, aucune FAQ sur le site.</p></div>
+    <div class="finding"><div class="finding-top"><span class="badge info">Info</span></div><p>Le footer donne un email mais aucun numéro de téléphone de l'atelier, alors que le formulaire demande celui du client.</p></div>
+  </section>
+
+  <div class="sources">
+    Sources utilisées pour la comparaison : <a href="https://www.salesforce.com/commerce/online-payment-solution/checkout-guide/" target="_blank" rel="noopener">Salesforce — Ecommerce Checkout Best Practices 2026</a>, <a href="https://ecomdesignpro.com/ecommerce-trust-signals/" target="_blank" rel="noopener">Trust Signals For Ecommerce 2026</a>, <a href="https://www.sitebuilderreport.com/inspiration/bakery-websites" target="_blank" rel="noopener">Bakery Websites — 20+ Cozy Examples 2026</a>, <a href="https://www.webcitz.com/blog/best-bakery-websites/" target="_blank" rel="noopener">10 Best Bakery Website Designs 2026 (Expert Audit)</a>.
+  </div>
+</div>

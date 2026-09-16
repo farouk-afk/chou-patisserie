@@ -1,0 +1,2343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chou Pâtisserie — Cookies, gâteaux et desserts artisanaux à Alger</title>
+<meta name="description" content="Chou Pâtisserie : cookies, gâteaux et desserts artisanaux faits main à Kouba, Alger. Créations classiques et tendances gourmandes du moment, à commander en ligne.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chou Pâtisserie">
+<meta property="og:description" content="Cookies, gâteaux et desserts artisanaux faits main à Kouba, Alger. Découvrez nos créations et commandez en ligne.">
+<meta property="og:image" content="assets/img/hero-cookie-choc.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chou Pâtisserie">
+<meta name="twitter:description" content="Cookies, gâteaux et desserts artisanaux faits main à Kouba, Alger.">
+<meta name="twitter:image" content="assets/img/hero-cookie-choc.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;0,9..144,650;1,9..144,440;1,9..144,560&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7EFE3;
+    --cream-deep:#EEDFC7;
+    --paper:#FCF8F1;
+    --cacao:#33221A;
+    --cacao-soft:#6B5142;
+    --caramel:#C17A3E;
+    --caramel-deep:#8C4F20;
+    --praline:#E7B366;
+    --pistache:#7F9560;
+    --pistache-deep:#4E5E3B;
+    --rose:#D98F82;
+    --rose-deep:#7F3225;
+    --line: rgba(51,34,26,0.14);
+    --shadow-color: 27,17,10;
+    font-size:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#1B120C;
+      --cream-deep:#241811;
+      --paper:#150E09;
+      --cacao:#F4E8D9;
+      --cacao-soft:#C9B4A0;
+      --caramel:#E7A25C;
+      --caramel-deep:#F0B87B;
+      --praline:#E7B366;
+      --pistache:#93A876;
+      --pistache-deep:#D2E0BC;
+      --rose:#E4A199;
+      --rose-deep:#E4A199;
+      --line: rgba(244,232,217,0.14);
+      --shadow-color: 0,0,0;
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#1B120C;
+    --cream-deep:#241811;
+    --paper:#150E09;
+    --cacao:#F4E8D9;
+    --cacao-soft:#C9B4A0;
+    --caramel:#E7A25C;
+    --caramel-deep:#F0B87B;
+    --praline:#E7B366;
+    --pistache:#93A876;
+    --pistache-deep:#D2E0BC;
+    --rose:#E4A199;
+    --rose-deep:#E4A199;
+    --line: rgba(244,232,217,0.14);
+    --shadow-color: 0,0,0;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--cacao);
+    font-family:'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    padding-inline:0;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:560;
+    letter-spacing:-0.01em;
+    text-wrap:balance;
+    margin:0;
+    color:var(--cacao);
+  }
+  em{ font-style:italic; font-weight:440; color:var(--caramel-deep); }
+  p{ margin:0; line-height:1.7; color:var(--cacao-soft); }
+  a{ color:inherit; text-decoration:none; }
+  img,svg{ display:block; max-width:100%; }
+  button{ font-family:inherit; }
+
+  .wrap{ max-width:1240px; margin-inline:auto; padding-inline:clamp(20px,5vw,64px); }
+  .eyebrow{
+    font-family:'Manrope',sans-serif; font-weight:700; font-size:0.78rem;
+    letter-spacing:0.16em; text-transform:uppercase; color:var(--caramel-deep);
+    margin:0 0 14px;
+  }
+  .eyebrow::before{ content:"— "; }
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:15px 28px; border-radius:100px;
+    font-weight:700; font-size:0.95rem; letter-spacing:0.01em;
+    border:1px solid transparent; cursor:pointer;
+    transition:transform .35s cubic-bezier(.22,1,.36,1), background-color .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease;
+    will-change:transform;
+  }
+  .btn:hover{ transform:translateY(-3px); }
+  .btn:active{ transform:translateY(-1px); }
+  .btn-primary{ background:var(--cacao); color:var(--paper); }
+  .btn-primary:hover{ background:var(--caramel-deep); box-shadow:0 14px 30px -12px rgba(var(--shadow-color),0.45); }
+  .btn-ghost{ background:transparent; border-color:var(--line); color:var(--cacao); }
+  .btn-ghost:hover{ border-color:var(--caramel); background:var(--cream-deep); }
+  .btn-text{ padding:15px 6px; background:none; }
+  .btn .arrow{ display:inline-block; transition:transform .35s cubic-bezier(.22,1,.36,1); }
+  .btn:hover .arrow{ transform:translateX(5px); }
+  .link-u{ position:relative; }
+  .link-u::after{
+    content:""; position:absolute; left:0; right:100%; bottom:-3px; height:1px;
+    background:currentColor; transition:right .4s cubic-bezier(.22,1,.36,1);
+  }
+  .link-u:hover::after{ right:0; }
+
+  /* ---------- navbar ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:26px clamp(20px,5vw,64px);
+    display:flex; align-items:center; justify-content:space-between;
+    transition:padding .45s cubic-bezier(.22,1,.36,1), background-color .45s ease, backdrop-filter .45s ease, box-shadow .45s ease;
+    animation:navIn .9s cubic-bezier(.22,1,.36,1) both;
+  }
+  .nav.scrolled{
+    padding:14px clamp(20px,5vw,64px);
+    background:color-mix(in srgb, var(--cream) 78%, transparent);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    box-shadow:0 1px 0 var(--line);
+  }
+  .logo{ font-family:'Fraunces',serif; font-size:1.5rem; font-weight:650; letter-spacing:-0.01em; }
+  .logo .dot{ color:var(--caramel); }
+  .nav-links{ display:flex; gap:36px; font-weight:600; font-size:0.95rem; }
+  .nav-links a{ position:relative; padding:4px 0; }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; right:100%; bottom:0; height:1.5px;
+    background:var(--caramel); transition:right .35s cubic-bezier(.22,1,.36,1);
+  }
+  .nav-links a:hover::after{ right:0; }
+  .nav-right{ display:flex; align-items:center; gap:22px; }
+  .hamburger{
+    display:none; width:42px; height:42px; border-radius:50%; border:1px solid var(--line);
+    background:transparent; position:relative; cursor:pointer; flex-shrink:0;
+  }
+  .hamburger span{
+    position:absolute; left:12px; right:12px; height:1.5px; background:var(--cacao);
+    transition:transform .35s cubic-bezier(.22,1,.36,1), opacity .25s ease, top .35s ease;
+  }
+  .hamburger span:nth-child(1){ top:16px; }
+  .hamburger span:nth-child(2){ top:21px; }
+  .hamburger span:nth-child(3){ top:26px; }
+  .hamburger.open span:nth-child(1){ top:21px; transform:rotate(45deg); }
+  .hamburger.open span:nth-child(2){ opacity:0; }
+  .hamburger.open span:nth-child(3){ top:21px; transform:rotate(-45deg); }
+
+  .mobile-menu{
+    position:fixed; inset:0; z-index:90; background:var(--cream);
+    display:flex; flex-direction:column; justify-content:center; gap:28px;
+    padding:0 clamp(28px,8vw,64px);
+    opacity:0; visibility:hidden; transform:translateY(-12px);
+    transition:opacity .4s ease, visibility 0s linear .4s, transform .4s cubic-bezier(.22,1,.36,1);
+  }
+  .mobile-menu.open{ opacity:1; visibility:visible; transform:translateY(0); transition:opacity .4s ease, visibility 0s, transform .4s cubic-bezier(.22,1,.36,1); }
+  .mobile-menu a{
+    font-family:'Fraunces',serif; font-size:2.1rem; font-weight:500;
+    opacity:0; transform:translateY(16px);
+    transition:opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1);
+  }
+  .mobile-menu.open a{ opacity:1; transform:translateY(0); }
+  .mobile-menu.open a:nth-child(1){ transition-delay:.08s; }
+  .mobile-menu.open a:nth-child(2){ transition-delay:.15s; }
+  .mobile-menu.open a:nth-child(3){ transition-delay:.22s; }
+  .mobile-menu.open a:nth-child(4){ transition-delay:.29s; }
+  .mobile-menu.open .btn{ transition-delay:.36s; }
+  .mobile-menu .btn{ align-self:flex-start; opacity:0; transform:translateY(16px); }
+  .mobile-menu.open .btn{ opacity:1; transform:translateY(0); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; min-height:100svh; display:flex; align-items:center;
+    padding:140px clamp(20px,5vw,64px) 100px;
+    overflow:hidden;
+  }
+  .hero-glow{
+    position:absolute; inset:-10% -10% auto auto; width:60vw; height:60vw; max-width:900px; max-height:900px;
+    background:radial-gradient(circle, color-mix(in srgb, var(--praline) 55%, transparent) 0%, transparent 68%);
+    filter:blur(10px); opacity:0; animation:fadeIn 1.6s ease .1s forwards; pointer-events:none;
+  }
+  .hero-grid{
+    position:relative; z-index:2; display:grid; grid-template-columns:minmax(0,620px) 1fr;
+    gap:40px; width:100%; align-items:center;
+  }
+  .hero-eyebrow{ opacity:0; animation:riseIn .8s cubic-bezier(.22,1,.36,1) .15s forwards; }
+  .hero-title{
+    font-size:clamp(2.6rem, 5.6vw, 4.6rem); line-height:1.03;
+    opacity:0; animation:riseIn .9s cubic-bezier(.22,1,.36,1) .32s forwards;
+  }
+  .hero-sub{
+    max-width:440px; margin-top:24px; font-size:1.08rem;
+    opacity:0; animation:riseIn .9s cubic-bezier(.22,1,.36,1) .55s forwards;
+  }
+  .hero-actions{ display:flex; align-items:center; gap:8px; margin-top:38px; flex-wrap:wrap;
+    opacity:0; animation:riseIn .9s cubic-bezier(.22,1,.36,1) .75s forwards;
+  }
+  .hero-stats{
+    display:flex; gap:32px; margin-top:56px; padding-top:28px; border-top:1px solid var(--line);
+    opacity:0; animation:riseIn .9s cubic-bezier(.22,1,.36,1) .92s forwards;
+  }
+  .hero-stats div strong{ display:block; font-family:'Fraunces',serif; font-size:1.5rem; font-weight:600; }
+  .hero-stats div span{ font-size:0.82rem; color:var(--cacao-soft); }
+
+  .hero-stage{ position:relative; height:560px; }
+  .dessert{
+    position:absolute; filter:drop-shadow(0 18px 30px rgba(var(--shadow-color),0.18));
+  }
+  .dessert-in{
+    opacity:0; transform:scale(0.85);
+    animation:dessertIn 1s cubic-bezier(.22,1,.36,1) forwards;
+  }
+  .dessert-photo{
+    position:relative; width:100%; aspect-ratio:1/1; border-radius:50%;
+    overflow:hidden; border:6px solid var(--paper);
+    box-shadow:0 0 0 1px var(--line);
+    background:var(--cream-deep);
+  }
+  .dessert-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  .d1{ width:190px; top:2%;  left:6%;  }
+  .d2{ width:130px; top:0%;  left:56%; }
+  .d3{ width:150px; top:20%; left:74%; }
+  .d4{ width:120px; top:44%; left:2%;  }
+  .d5{ width:210px; top:40%; left:34%; }
+  .d6{ width:110px; top:66%; left:78%; }
+  .d7{ width:150px; top:74%; left:14%; }
+
+  .d1 .dessert-in{ animation-delay:.5s; }
+  .d2 .dessert-in{ animation-delay:.68s; }
+  .d3 .dessert-in{ animation-delay:.6s; }
+  .d4 .dessert-in{ animation-delay:.78s; }
+  .d5 .dessert-in{ animation-delay:.44s; }
+  .d6 .dessert-in{ animation-delay:.9s; }
+  .d7 .dessert-in{ animation-delay:.85s; }
+
+  .d1 .float-inner{ transform:rotate(-8deg); animation:float1 4.2s ease-in-out .3s infinite; }
+  .d2 .float-inner{ transform:rotate(9deg);  animation:float2 3.6s ease-in-out .1s infinite; }
+  .d3 .float-inner{ transform:rotate(-5deg); animation:float3 4.8s ease-in-out .5s infinite; }
+  .d4 .float-inner{ transform:rotate(6deg);  animation:float1 3.9s ease-in-out .2s infinite; }
+  .d5 .float-inner{ transform:rotate(-4deg); animation:float2 5s ease-in-out 0s infinite; }
+  .d6 .float-inner{ transform:rotate(11deg); animation:float3 3.4s ease-in-out .35s infinite; }
+  .d7 .float-inner{ transform:rotate(-9deg); animation:float1 4.4s ease-in-out .15s infinite; }
+
+  @keyframes float1{ 0%,100%{ translate:0 0; } 50%{ translate:0 -10px; } }
+  @keyframes float2{ 0%,100%{ translate:0 0; } 50%{ translate:0 -14px; } }
+  @keyframes float3{ 0%,100%{ translate:0 0; } 50%{ translate:0 -8px; } }
+  .dessert .float-inner{ display:block; }
+  .d1 .float-inner, .d2 .float-inner, .d3 .float-inner, .d4 .float-inner, .d5 .float-inner, .d6 .float-inner, .d7 .float-inner{
+    transform-origin:50% 50%;
+  }
+
+  @keyframes dessertIn{ from{ opacity:0; transform:scale(0.85); } to{ opacity:1; transform:scale(1); } }
+  @keyframes riseIn{ from{ opacity:0; transform:translateY(28px); } to{ opacity:1; transform:translateY(0); } }
+  @keyframes fadeIn{ to{ opacity:1; } }
+  @keyframes navIn{ from{ opacity:0; transform:translateY(-10px); } to{ opacity:1; transform:translateY(0); } }
+
+  .scroll-cue{
+    position:absolute; bottom:34px; left:clamp(20px,5vw,64px); display:flex; align-items:center; gap:10px;
+    font-size:0.78rem; color:var(--cacao-soft); letter-spacing:0.05em; z-index:2;
+    opacity:0; animation:riseIn .9s ease 1.15s forwards;
+  }
+  .scroll-cue .line{ width:34px; height:1px; background:var(--cacao-soft); position:relative; overflow:hidden; }
+  .scroll-cue .line::after{ content:""; position:absolute; inset:0; background:var(--caramel); animation:scrollLine 2.2s ease-in-out infinite; }
+  @keyframes scrollLine{ 0%{ transform:translateX(-100%);} 50%{ transform:translateX(0);} 100%{ transform:translateX(100%);} }
+
+  /* ---------- reveal utility ---------- */
+  .reveal{ opacity:0; transform:translateY(40px); transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  .reveal-left{ opacity:0; transform:translateX(-48px); transition:opacity .85s cubic-bezier(.22,1,.36,1), transform .85s cubic-bezier(.22,1,.36,1); }
+  .reveal-left.in{ opacity:1; transform:translateX(0); }
+  .reveal-right{ opacity:0; transform:translateX(48px); transition:opacity .85s cubic-bezier(.22,1,.36,1), transform .85s cubic-bezier(.22,1,.36,1); }
+  .reveal-right.in{ opacity:1; transform:translateX(0); }
+  .reveal-zoom{ opacity:0; transform:scale(0.9); transition:opacity .85s cubic-bezier(.22,1,.36,1), transform .85s cubic-bezier(.22,1,.36,1); }
+  .reveal-zoom.in{ opacity:1; transform:scale(1); }
+
+  /* ---------- intro ---------- */
+  .intro{ padding:120px clamp(20px,5vw,64px) 60px; }
+  .intro-inner{ max-width:900px; margin-inline:auto; text-align:center; position:relative; }
+  .intro h2{ font-size:clamp(1.7rem,3.4vw,2.5rem); line-height:1.35; }
+  .intro-mark{
+    position:absolute; width:120px; height:120px; top:-70px; right:calc(50% - 340px);
+    opacity:0.5; pointer-events:none;
+  }
+
+  /* ---------- section head ---------- */
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head.center{ margin-inline:auto; text-align:center; }
+  .section-head h2{ font-size:clamp(2rem,4vw,3rem); margin-bottom:16px; }
+  .section-head p{ font-size:1.05rem; }
+
+  /* ---------- creations ---------- */
+  .creations{ padding:90px clamp(20px,5vw,64px); background:var(--cream-deep); }
+  .creations-grid{
+    display:grid; grid-template-columns:repeat(6,1fr); gap:20px;
+  }
+  .c-card{
+    position:relative; border-radius:28px; padding:32px 28px; overflow:hidden;
+    background:var(--paper); border:1px solid var(--line);
+    transition:transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s cubic-bezier(.22,1,.36,1), border-color .5s ease;
+    display:flex; flex-direction:column; justify-content:flex-end;
+  }
+  .c-card:hover{ transform:translateY(-8px); box-shadow:0 26px 50px -20px rgba(var(--shadow-color),0.28); border-color:transparent; }
+  .c-card.span-3{ grid-column:span 3; }
+  .c-card.span-2{ grid-column:span 2; }
+  .c-card.big{ min-height:400px; }
+  .c-card.reg{ min-height:320px; }
+  .c-icon{
+    width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:20px;
+    margin-bottom:20px; transition:transform .6s cubic-bezier(.22,1,.36,1);
+  }
+  .c-card:hover .c-icon{ transform:scale(1.08) rotate(-4deg); }
+  .c-card.big .c-icon{ aspect-ratio:16/9; }
+  .c-card h3{ font-size:1.4rem; margin-bottom:8px; }
+  .c-card p{ font-size:0.92rem; max-height:0; opacity:0; overflow:hidden; transition:max-height .5s ease, opacity .4s ease, margin-top .5s ease; }
+  .c-card:hover p{ max-height:80px; opacity:1; margin-top:6px; }
+  .c-tag{
+    position:absolute; top:24px; right:24px; font-size:0.72rem; font-weight:700; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--caramel-deep); background:var(--cream-deep); padding:6px 12px; border-radius:100px;
+  }
+  .c-card.big .c-tag{ background:var(--cream); }
+  .c-more{
+    display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+    font-weight:700; font-size:0.85rem; color:var(--caramel-deep); align-self:flex-start;
+  }
+  .c-more .arrow{ display:inline-block; transition:transform .35s cubic-bezier(.22,1,.36,1); }
+  .c-more:hover .arrow{ transform:translateX(5px); }
+
+  /* ---------- carte (fiches produit) ---------- */
+  .carte{ padding:90px clamp(20px,5vw,64px); }
+  .carte-filters{
+    display:flex; flex-wrap:wrap; gap:10px; margin-bottom:44px;
+  }
+  .filter-pill{
+    padding:11px 22px; border-radius:100px; border:1px solid var(--line);
+    background:var(--paper); color:var(--cacao-soft); font-weight:600; font-size:0.88rem;
+    cursor:pointer; transition:background-color .3s ease, color .3s ease, border-color .3s ease, transform .3s cubic-bezier(.22,1,.36,1);
+  }
+  .filter-pill:hover{ border-color:var(--caramel); color:var(--cacao); }
+  .filter-pill.active{ background:var(--cacao); border-color:var(--cacao); color:var(--paper); }
+  .carte-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  .p-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:24px; overflow:hidden;
+    display:flex; flex-direction:column; cursor:pointer;
+    transition:transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s cubic-bezier(.22,1,.36,1), border-color .5s ease;
+  }
+  .p-card:hover{ transform:translateY(-6px); box-shadow:0 24px 46px -20px rgba(var(--shadow-color),0.26); border-color:transparent; }
+  .p-card.p-hidden{ display:none; }
+  .p-media{ position:relative; aspect-ratio:4/3; overflow:hidden; }
+  .p-media img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s cubic-bezier(.22,1,.36,1); }
+  .p-card:hover .p-media img{ transform:scale(1.07); }
+  .p-badge{
+    position:absolute; top:14px; left:14px; font-size:0.68rem; font-weight:700; letter-spacing:0.06em;
+    text-transform:uppercase; padding:6px 13px; border-radius:100px;
+  }
+  .p-badge--signature{ background:var(--cream-deep); color:var(--caramel-deep); }
+  .p-badge--tendance{ background:color-mix(in srgb, var(--pistache) 26%, var(--paper) 74%); color:var(--pistache-deep); }
+  .p-body{ padding:20px 22px 24px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .p-body h3{
+    font-family:'Fraunces',serif; font-weight:560; font-size:1.14rem; letter-spacing:-0.01em;
+    margin:0; color:var(--cacao);
+  }
+  .p-body p{ font-size:0.88rem; margin:0; flex:1; }
+  .p-price{ font-weight:700; font-size:0.92rem; color:var(--caramel-deep); margin-top:2px; }
+
+  /* ---------- modale fiche produit + commande ---------- */
+  .modal-backdrop{
+    position:fixed; inset:0; z-index:1000;
+    display:flex; align-items:center; justify-content:center; padding:16px;
+    background:color-mix(in srgb, var(--cacao) 62%, transparent);
+    backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    opacity:0; visibility:hidden;
+    transition:opacity .4s ease, visibility 0s linear .4s;
+  }
+  .modal-backdrop.open{ opacity:1; visibility:visible; transition:opacity .4s ease, visibility 0s linear 0s; }
+  .modal-panel{
+    position:relative; background:var(--paper); border-radius:28px;
+    width:min(640px, 100%); max-height:90svh; overflow-y:auto;
+    box-shadow:0 40px 80px -30px rgba(var(--shadow-color),0.45);
+    transform:scale(0.94) translateY(18px); opacity:0;
+    transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .4s ease;
+  }
+  .modal-backdrop.open .modal-panel{ transform:scale(1) translateY(0); opacity:1; }
+  .modal-close{
+    position:absolute; top:16px; right:16px; z-index:2;
+    width:40px; height:40px; border-radius:50%; border:1px solid var(--line);
+    background:var(--paper); color:var(--cacao); font-size:1.2rem; line-height:1; cursor:pointer;
+    transition:background-color .3s ease, border-color .3s ease, transform .3s cubic-bezier(.22,1,.36,1);
+  }
+  .modal-close:hover{ border-color:var(--caramel); transform:rotate(90deg); }
+  .modal-media{ position:relative; aspect-ratio:4/3; overflow:hidden; border-radius:28px 28px 0 0; }
+  .modal-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .modal-body{ padding:26px 28px 30px; display:flex; flex-direction:column; gap:14px; }
+  .modal-body h3{ font-size:1.5rem; padding-right:36px; }
+  .modal-row{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-top:10px; border-top:1px solid var(--line); font-size:0.92rem; }
+  .modal-label{ color:var(--cacao-soft); font-weight:600; font-size:0.86rem; }
+  .modal-order-btn{ margin-top:8px; width:100%; justify-content:center; }
+
+  .modal-form{ padding:26px 28px 32px; }
+  .modal-back{ margin-bottom:6px; align-self:flex-start; padding-left:0; }
+  .modal-form-title{ font-size:1.3rem; margin-bottom:18px; }
+  .order-summary{
+    background:var(--cream-deep); border-radius:18px; padding:14px 18px; margin-bottom:22px;
+    display:flex; flex-direction:column; gap:4px; font-size:0.88rem; color:var(--cacao-soft);
+  }
+  .order-summary strong{ font-family:'Fraunces',serif; font-size:1.05rem; color:var(--cacao); }
+
+  .field{ display:flex; flex-direction:column; gap:6px; margin-bottom:18px; }
+  .field label{ font-weight:700; font-size:0.86rem; color:var(--cacao); }
+  .field input[type="text"], .field input[type="tel"], .field input[type="email"],
+  .field input[type="date"], .field textarea{
+    font-family:inherit; font-size:0.95rem; color:var(--cacao);
+    background:var(--cream); border:1px solid var(--line); border-radius:14px;
+    padding:12px 14px; transition:border-color .3s ease, background-color .3s ease;
+  }
+  .field textarea{ resize:vertical; min-height:76px; }
+  .field input:focus, .field textarea:focus{ border-color:var(--caramel); background:var(--paper); }
+  .field input:focus-visible, .field textarea:focus-visible{ outline:2px solid var(--caramel); outline-offset:2px; }
+  .field-help{ font-size:0.78rem; font-weight:500; color:var(--cacao-soft); }
+  .field-error{ display:block; font-size:0.8125rem; color:var(--rose-deep); font-weight:600; min-height:1em; }
+
+  .field-collapse{ max-height:0; opacity:0; overflow:hidden; transition:max-height .5s ease, opacity .4s ease, margin-top .5s ease; }
+  .field-collapse .field-help{ margin-top:6px; }
+  .field-collapse.open{ max-height:280px; opacity:1; margin-top:12px; }
+
+  .radio-group{ display:flex; flex-wrap:wrap; gap:8px; margin-top:2px; }
+  .radio-pill{ position:relative; display:inline-flex; cursor:pointer; }
+  .radio-pill input{ position:absolute; opacity:0; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+  .radio-pill span{
+    display:inline-flex; align-items:center; padding:10px 16px; border-radius:100px;
+    border:1px solid var(--line); background:var(--paper); color:var(--cacao-soft);
+    font-size:0.85rem; font-weight:600;
+    transition:background-color .3s ease, color .3s ease, border-color .3s ease;
+  }
+  .radio-pill input:checked + span{ background:var(--cacao); border-color:var(--cacao); color:var(--paper); }
+  .radio-pill input:focus-visible + span{ outline:2px solid var(--caramel); outline-offset:2px; }
+  .radio-note{ font-size:0.78rem; color:var(--cacao-soft); margin-top:8px; margin-bottom:0; }
+
+  .stepper{ display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:100px; overflow:hidden; width:fit-content; }
+  .stepper-btn{ width:40px; height:40px; border:none; background:var(--cream-deep); color:var(--cacao); font-size:1.15rem; font-weight:700; cursor:pointer; transition:background-color .3s ease; }
+  .stepper-btn:hover{ background:var(--praline); }
+  .stepper input{ width:52px; text-align:center; border:none; background:transparent; font-weight:700; font-size:1rem; color:var(--cacao); font-family:inherit; }
+  .stepper input::-webkit-inner-spin-button, .stepper input::-webkit-outer-spin-button{ -webkit-appearance:none; margin:0; }
+
+  .modal-submit{ margin-top:8px; width:100%; justify-content:center; }
+  .modal-confirm{ padding:44px 28px 40px; text-align:center; flex-direction:column; align-items:center; gap:22px; }
+  .modal-confirm:not([hidden]){ display:flex; }
+  .modal-confirm p{ font-size:1rem; max-width:420px; }
+
+  /* ---------- gallery ---------- */
+  .gallery{ padding:110px clamp(20px,5vw,64px); }
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:140px; gap:18px;
+  }
+  .g-item{
+    position:relative; border-radius:22px; overflow:hidden; cursor:default;
+  }
+  .g-item .art{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.22,1,.36,1); }
+  .g-item:hover .art{ transform:scale(1.06); }
+  .g-item .cap{
+    position:absolute; left:18px; bottom:16px; color:var(--paper); font-weight:700; font-size:0.95rem;
+    text-shadow:0 2px 12px rgba(0,0,0,0.35);
+    opacity:0; transform:translateY(8px); transition:opacity .4s ease, transform .4s ease;
+  }
+  .g-item:hover .cap{ opacity:1; transform:translateY(0); }
+  .g1{ grid-column:span 3; grid-row:span 3; }
+  .g2{ grid-column:span 3; grid-row:span 2; }
+  .g3{ grid-column:span 3; grid-row:span 2; }
+  .g4{ grid-column:span 2; grid-row:span 2; }
+  .g5{ grid-column:span 2; grid-row:span 2; }
+  .g6{ grid-column:span 2; grid-row:span 2; }
+
+  /* ---------- about ---------- */
+  .about{ padding:100px clamp(20px,5vw,64px); background:var(--cream-deep); }
+  .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
+  .about h2{ font-size:clamp(1.9rem,3.6vw,2.7rem); margin-bottom:22px; }
+  .about p{ font-size:1.02rem; margin-bottom:16px; }
+  .about-figure{ position:relative; aspect-ratio:4/5; border-radius:28px; overflow:hidden; }
+  .about-figure img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .about-sign{ margin-top:30px; font-family:'Fraunces',serif; font-style:italic; font-size:1.15rem; color:var(--caramel-deep); }
+
+  /* ---------- marquee ---------- */
+  .marquee-wrap{ background:var(--cacao); color:var(--cream); overflow:hidden; padding:26px 0; }
+  .marquee-track{ display:flex; width:max-content; animation:marquee 32s linear infinite; }
+  .marquee-track span{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:440; font-size:1.6rem;
+    padding-right:44px; white-space:nowrap; color:var(--cream);
+  }
+  .marquee-track span em{ color:var(--praline); font-style:normal; padding:0 20px; }
+  @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  /* ---------- cta ---------- */
+  .cta{
+    position:relative; background:var(--cacao); color:var(--cream); padding:130px clamp(20px,5vw,64px);
+    text-align:center; overflow:hidden;
+  }
+  .cta-blob{
+    position:absolute; width:70vw; height:70vw; max-width:1000px; max-height:1000px; border-radius:50%;
+    background:radial-gradient(circle, color-mix(in srgb, var(--caramel) 45%, transparent), transparent 70%);
+    top:-30%; left:50%; translate:-50% 0; pointer-events:none;
+  }
+  .cta-inner{ position:relative; z-index:2; max-width:720px; margin-inline:auto; }
+  .cta h2{ color:var(--cream); font-size:clamp(2.2rem,5vw,3.6rem); margin-bottom:20px; }
+  .cta p{ color:color-mix(in srgb, var(--cream) 75%, transparent); font-size:1.1rem; margin-bottom:38px; }
+  .cta .btn-primary{ background:var(--praline); color:var(--cacao); }
+  .cta .btn-primary:hover{ background:var(--cream); }
+  .cta .btn-ghost{ border-color:rgba(247,239,227,0.55); color:var(--cream); }
+  .cta .btn-ghost:hover{ background:rgba(247,239,227,0.1); border-color:var(--cream); }
+
+  /* ---------- footer ---------- */
+  .footer{ padding:70px clamp(20px,5vw,64px) 34px; }
+  .footer-top{ display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; padding-bottom:50px; border-bottom:1px solid var(--line); }
+  .footer-brand .logo{ display:inline-flex; margin-bottom:14px; }
+  .footer-brand p{ max-width:280px; font-size:0.92rem; }
+  .footer-cols{ display:flex; gap:64px; flex-wrap:wrap; }
+  .footer-col h3{ font-family:'Manrope',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--cacao-soft); margin:0 0 16px; }
+  .footer-col a, .footer-col span{ display:block; font-size:0.95rem; margin-bottom:10px; color:var(--cacao); width:fit-content; }
+  .footer-col .footer-soon{ opacity:0.55; }
+  .footer-bottom{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-top:26px; font-size:0.82rem; color:var(--cacao-soft); }
+
+  /* ---------- cursor ---------- */
+  .cursor-dot, .cursor-ring{
+    position:fixed; top:0; left:0; pointer-events:none; z-index:999; border-radius:50%;
+    transform:translate(-50%,-50%); will-change:transform;
+  }
+  .cursor-dot{ width:7px; height:7px; background:var(--caramel-deep); }
+  .cursor-ring{ width:34px; height:34px; border:1.5px solid var(--caramel-deep); opacity:0.55; transition:width .3s ease, height .3s ease, opacity .3s ease, border-color .3s ease; }
+  .cursor-ring.big{ width:64px; height:64px; opacity:0.35; }
+  .cursor-ring.btnhover{ background:var(--caramel-deep); opacity:0.12; }
+  body.cursor-active, body.cursor-active a, body.cursor-active button{ cursor:none; }
+
+  /* ---------- utilitaires ---------- */
+  .visually-hidden{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+
+  /* ---------- assistant Chou (widget de chat) ----------
+     Widget non-modal, persistant, ancré en bas à droite. Voir CLAUDE.md pour la doc
+     complète (structure des intentions, comment ajouter une réponse). */
+  .chat-widget{ position:fixed; right:24px; bottom:24px; z-index:400; }
+
+  .chat-launcher{
+    position:relative; width:58px; height:58px; border-radius:50%;
+    background:var(--cacao); border:1px solid var(--cacao); cursor:pointer;
+    box-shadow:0 16px 32px -14px rgba(var(--shadow-color),0.5);
+    transition:transform .35s cubic-bezier(.22,1,.36,1), background-color .3s ease, box-shadow .3s ease;
+  }
+  .chat-launcher:hover{ transform:translateY(-3px); background:var(--caramel-deep); }
+  .chat-launcher:focus-visible{ outline:2px solid var(--caramel); outline-offset:3px; }
+  .chat-launcher .bar{
+    position:absolute; left:18px; right:18px; height:2px; border-radius:2px; background:var(--paper);
+    transition:transform .35s cubic-bezier(.22,1,.36,1), opacity .25s ease, top .35s ease, right .35s ease;
+  }
+  .chat-launcher .bar:nth-child(1){ top:22px; }
+  .chat-launcher .bar:nth-child(2){ top:29px; right:26px; }
+  .chat-launcher .bar:nth-child(3){ top:36px; }
+  .chat-launcher.open .bar:nth-child(1){ top:29px; transform:rotate(45deg); }
+  .chat-launcher.open .bar:nth-child(2){ opacity:0; }
+  .chat-launcher.open .bar:nth-child(3){ top:29px; right:18px; transform:rotate(-45deg); }
+
+  .chat-ping{
+    position:absolute; top:-2px; right:-2px; width:15px; height:15px; border-radius:50%;
+    background:var(--rose); border:2px solid var(--cream); pointer-events:none;
+    animation:chatPing 2.4s ease-in-out infinite;
+  }
+  @keyframes chatPing{ 0%,100%{ transform:scale(1); opacity:1; } 50%{ transform:scale(1.2); opacity:0.7; } }
+
+  .chat-panel{
+    position:fixed; right:24px; bottom:96px; z-index:400;
+    width:368px; max-width:calc(100vw - 32px); height:min(74vh, 540px);
+    background:var(--paper); border:1px solid var(--line); border-radius:26px;
+    box-shadow:0 40px 80px -30px rgba(var(--shadow-color),0.4);
+    display:flex; flex-direction:column; overflow:hidden;
+    transform-origin:bottom right;
+    opacity:0; visibility:hidden; transform:translateY(16px) scale(0.96);
+    transition:opacity .35s ease, transform .35s cubic-bezier(.22,1,.36,1), visibility 0s linear .35s;
+  }
+  .chat-panel.open{
+    opacity:1; visibility:visible; transform:translateY(0) scale(1);
+    transition:opacity .35s ease, transform .35s cubic-bezier(.22,1,.36,1), visibility 0s linear 0s;
+  }
+  .chat-panel-head{
+    display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+    padding:18px 16px 14px; background:var(--cream-deep); border-bottom:1px solid var(--line);
+  }
+  .chat-panel-title{ font-family:'Fraunces',serif; font-weight:650; font-size:1.05rem; margin:0; color:var(--cacao); }
+  .chat-panel-sub{ font-size:0.74rem; line-height:1.4; color:var(--cacao-soft); margin:4px 0 0; }
+  .chat-panel-close{
+    flex-shrink:0; width:32px; height:32px; border-radius:50%; border:1px solid var(--line);
+    background:var(--paper); color:var(--cacao); font-size:1.1rem; line-height:1; cursor:pointer;
+    transition:border-color .3s ease, transform .3s cubic-bezier(.22,1,.36,1);
+  }
+  .chat-panel-close:hover{ border-color:var(--caramel); transform:rotate(90deg); }
+  .chat-panel-close:focus-visible{ outline:2px solid var(--caramel); outline-offset:2px; }
+
+  .chat-log{ flex:1; min-height:100px; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:10px; }
+  .chat-msg{ max-width:88%; padding:10px 14px; border-radius:16px; font-size:0.87rem; line-height:1.55; }
+  .chat-msg a{ color:var(--caramel-deep); text-decoration:underline; }
+  .chat-msg.bot{ align-self:flex-start; background:var(--cream-deep); color:var(--cacao); border-bottom-left-radius:4px; }
+  .chat-msg.user{ align-self:flex-end; background:var(--cacao); color:var(--paper); border-bottom-right-radius:4px; }
+  .chat-suggest-btn{
+    display:inline-flex; margin:8px 6px 0 0; padding:7px 14px; border-radius:100px;
+    border:1px solid var(--caramel); background:transparent; color:var(--caramel-deep);
+    font-weight:700; font-size:0.76rem; cursor:pointer;
+    transition:background-color .3s ease, color .3s ease;
+  }
+  .chat-suggest-btn:hover{ background:var(--caramel); color:var(--paper); }
+  .chat-suggest-btn:focus-visible{ outline:2px solid var(--caramel); outline-offset:2px; }
+
+  .chat-chips-row{ display:flex; align-items:center; gap:4px; flex-shrink:0; padding:0 10px 12px; }
+  .chat-chips-nav{
+    flex-shrink:0; width:26px; height:26px; border-radius:50%; border:1px solid var(--line);
+    background:var(--paper); color:var(--cacao-soft); font-size:1rem; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; padding:0;
+    transition:border-color .3s ease, color .3s ease, opacity .3s ease;
+  }
+  .chat-chips-nav:hover:not(:disabled){ border-color:var(--caramel); color:var(--cacao); }
+  .chat-chips-nav:focus-visible{ outline:2px solid var(--caramel); outline-offset:2px; }
+  .chat-chips-nav:disabled{ opacity:0.3; cursor:default; }
+  .chat-chips{
+    display:flex; flex-wrap:nowrap; flex:1; min-width:0; overflow-x:auto; gap:8px;
+    scrollbar-width:none;
+  }
+  .chat-chips::-webkit-scrollbar{ display:none; }
+  .chat-chip{
+    flex:0 0 auto; white-space:nowrap;
+    padding:8px 14px; border-radius:100px; border:1px solid var(--line);
+    background:var(--paper); color:var(--cacao-soft); font-size:0.77rem; font-weight:600; cursor:pointer;
+    transition:border-color .3s ease, color .3s ease, background-color .3s ease;
+  }
+  .chat-chip:hover{ border-color:var(--caramel); color:var(--cacao); }
+  .chat-chip:focus-visible{ outline:2px solid var(--caramel); outline-offset:2px; }
+
+  .chat-form{ display:flex; align-items:center; gap:8px; padding:14px 16px; border-top:1px solid var(--line); }
+  .chat-form input[type="text"]{
+    flex:1; min-width:0; font-family:inherit; font-size:0.9rem; color:var(--cacao);
+    background:var(--cream); border:1px solid var(--line); border-radius:100px; padding:11px 16px;
+    transition:border-color .3s ease, background-color .3s ease;
+  }
+  .chat-form input[type="text"]:focus{ border-color:var(--caramel); background:var(--paper); }
+  .chat-form input[type="text"]:focus-visible{ outline:2px solid var(--caramel); outline-offset:2px; }
+  .chat-send{
+    flex-shrink:0; width:40px; height:40px; border-radius:50%; border:none;
+    background:var(--cacao); color:var(--paper); font-size:1.1rem; cursor:pointer;
+    transition:background-color .3s ease, transform .3s cubic-bezier(.22,1,.36,1);
+  }
+  .chat-send:hover{ background:var(--caramel-deep); transform:translateY(-2px); }
+  .chat-send:focus-visible{ outline:2px solid var(--caramel); outline-offset:2px; }
+
+  @media (max-width:640px){
+    .chat-widget{ right:16px; bottom:16px; }
+    .chat-launcher{ width:52px; height:52px; }
+    .chat-panel{
+      left:16px; right:16px; bottom:80px; width:auto; max-width:none;
+      height:min(68vh, 520px);
+    }
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1080px){
+    .creations-grid{ grid-template-columns:repeat(2,1fr); }
+    .c-card.span-3, .c-card.span-2{ grid-column:span 1; }
+    .carte-grid{ grid-template-columns:repeat(2,1fr); }
+    .gallery-grid{ grid-template-columns:repeat(4,1fr); grid-auto-rows:130px; }
+    .g1{ grid-column:span 4; grid-row:span 2; }
+    .g2,.g3{ grid-column:span 2; }
+    .g4,.g5,.g6{ grid-column:span 2; grid-row:span 2; }
+  }
+
+  @media (max-width:920px){
+    .nav-links, .nav-cta{ display:none; }
+    .hamburger{ display:block; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-stage{ display:flex; height:auto; gap:14px; margin-top:44px; overflow-x:auto; padding-bottom:8px; scrollbar-width:none; }
+    .hero-stage::-webkit-scrollbar{ display:none; }
+    .dessert{ position:static; width:120px !important; flex:0 0 auto; transform:none !important; }
+    .dessert-in{ opacity:1; transform:none; animation:dessertInMobile .7s ease forwards; }
+    .about-grid{ grid-template-columns:1fr; gap:36px; }
+    .about-figure{ order:-1; aspect-ratio:16/10; }
+    .cursor-dot,.cursor-ring{ display:none; }
+  }
+  @keyframes dessertInMobile{ from{ opacity:0; translate:0 16px; } to{ opacity:1; translate:0 0; } }
+
+  @media (max-width:640px){
+    .hero{ padding-top:120px; }
+    .hero-stats{ gap:20px; flex-wrap:wrap; }
+    .creations-grid{ grid-template-columns:1fr; }
+    .carte-grid{ grid-template-columns:1fr; }
+    .carte-filters{ flex-wrap:nowrap; overflow-x:auto; padding-bottom:6px; scrollbar-width:none; }
+    .carte-filters::-webkit-scrollbar{ display:none; }
+    .filter-pill{ flex:0 0 auto; }
+    .gallery-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:150px; }
+    .g1,.g2,.g3,.g4,.g5,.g6{ grid-column:span 2; grid-row:span 2; }
+    .footer-top{ flex-direction:column; }
+    .marquee-track span{ font-size:1.2rem; }
+    .modal-body, .modal-form{ padding-left:18px; padding-right:18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; transition-delay:0s !important; scroll-behavior:auto !important; }
+    .reveal,.reveal-left,.reveal-right,.reveal-zoom{ opacity:1; transform:none; }
+    .marquee-track{ animation:none; }
+  }
+</style>
+
+</head>
+<body>
+
+<noscript><style>
+  .reveal,.reveal-left,.reveal-right,.reveal-zoom,.dessert-in,.c-card,.g-item,.p-card{ opacity:1 !important; transform:none !important; }
+  .chat-widget{ display:none !important; }
+</style></noscript>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#accueil">chou<span class="dot">.</span></a>
+  <nav class="nav-links">
+    <a href="#accueil">Accueil</a>
+    <a href="#creations">Créations</a>
+    <a href="#carte">Carte</a>
+    <a href="#apropos">À propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <a class="btn btn-ghost nav-cta" href="#creations">Découvrir nos créations</a>
+    <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#accueil">Accueil</a>
+  <a href="#creations">Créations</a>
+  <a href="#carte">Carte</a>
+  <a href="#apropos">À propos</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-primary" href="#creations">Découvrir nos créations</a>
+</div>
+
+<main>
+
+<section class="hero" id="accueil">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-grid wrap" style="padding-inline:0;">
+    <div>
+      <p class="eyebrow hero-eyebrow">Pâtisserie artisanale</p>
+      <h1 class="hero-title">Chaque bouchée<br><em>mérite une ovation.</em></h1>
+      <p class="hero-sub">Cookies fondants, gâteaux généreux et desserts sur-mesure, façonnés à la main chaque matin dans notre atelier.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#creations">Découvrir nos créations <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-text link-u" href="#apropos">Notre histoire</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>40+</strong><span>créations gourmandes</span></div>
+        <div><strong>100%</strong><span>fait main, chaque jour</span></div>
+        <div><strong>4.9/5</strong><span>avis clients</span></div>
+      </div>
+    </div>
+    <div class="hero-stage" aria-hidden="true">
+      <div class="dessert d1" data-speed="0.18"><div class="dessert-in"><div class="float-inner"><div class="dessert-photo"><img src="assets/img/hero-cookie-choc.webp" alt=""></div></div></div></div>
+      <div class="dessert d2" data-speed="0.32"><div class="dessert-in"><div class="float-inner"><div class="dessert-photo"><img src="assets/img/hero-macaron.webp" alt=""></div></div></div></div>
+      <div class="dessert d3" data-speed="0.22"><div class="dessert-in"><div class="float-inner"><div class="dessert-photo"><img src="assets/img/hero-donut.webp" alt=""></div></div></div></div>
+      <div class="dessert d4" data-speed="0.28"><div class="dessert-in"><div class="float-inner"><div class="dessert-photo"><img src="assets/img/hero-cookie-brown.webp" alt=""></div></div></div></div>
+      <div class="dessert d5" data-speed="0.12"><div class="dessert-in"><div class="float-inner"><div class="dessert-photo"><img src="assets/img/hero-cupcake.webp" alt=""></div></div></div></div>
+      <div class="dessert d6" data-speed="0.34"><div class="dessert-in"><div class="float-inner"><div class="dessert-photo"><img src="assets/img/hero-brownie.webp" alt=""></div></div></div></div>
+      <div class="dessert d7" data-speed="0.24"><div class="dessert-in"><div class="float-inner"><div class="dessert-photo"><img src="assets/img/hero-cookie-baked.webp" alt=""></div></div></div></div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="line"></span> Défiler</div>
+</section>
+
+<section class="intro">
+  <div class="intro-inner reveal">
+    <h2>Nées dans un petit atelier, nos pâtisseries sont pensées pour être partagées — ou pas, on ne juge pas.</h2>
+  </div>
+</section>
+
+<section class="creations" id="creations">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">La vitrine</p>
+      <h2>Nos créations</h2>
+      <p>Des classiques réinventés aux pièces sur-mesure, chaque recette est testée, goûtée, puis re-testée — pour de bonnes raisons.</p>
+    </div>
+    <div class="creations-grid">
+      <article class="c-card big span-3 reveal">
+        <span class="c-tag">Best-seller</span>
+        <img class="c-icon" src="assets/img/card-cookies.webp" alt="Assortiment de cookies artisanaux" loading="lazy">
+        <h3>Cookies</h3>
+        <p>Bords craquants, cœur fondant, pépites généreuses. Douze variétés en rotation permanente.</p>
+        <a class="c-more link-u" href="#carte" data-goto="cookies">Voir la carte <span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+      <article class="c-card big span-3 reveal">
+        <span class="c-tag">Sur commande</span>
+        <img class="c-icon" src="assets/img/card-gateaux.webp" alt="Part de gâteau au chocolat dressée sur assiette" loading="lazy">
+        <h3>Gâteaux</h3>
+        <p>Layer cakes moelleux et généreux, pour anniversaires, mariages ou simples envies de fête.</p>
+        <a class="c-more link-u" href="#carte" data-goto="gateaux">Voir la carte <span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+      <article class="c-card span-2 reg reveal">
+        <img class="c-icon" src="assets/img/card-desserts.webp" alt="Macarons colorés" loading="lazy">
+        <h3>Desserts</h3>
+        <p>Macarons, verrines et petites douceurs à picorer sans culpabilité.</p>
+        <a class="c-more link-u" href="#carte" data-goto="desserts">Voir la carte <span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+      <article class="c-card span-2 reg reveal">
+        <img class="c-icon" src="assets/img/card-tartes.webp" alt="Tarte aux fruits de saison" loading="lazy">
+        <h3>Tartes</h3>
+        <p>Pâte sablée maison, fruits de saison, générosité assumée.</p>
+        <a class="c-more link-u" href="#carte" data-goto="tartes">Voir la carte <span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+      <article class="c-card span-2 reg reveal">
+        <img class="c-icon" src="assets/img/card-brownies.webp" alt="Brownies au chocolat fondant" loading="lazy">
+        <h3>Brownies</h3>
+        <p>Denses, fudgy, légèrement salés. Un carré suffit rarement.</p>
+        <a class="c-more link-u" href="#carte" data-goto="brownies">Voir la carte <span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+      <article class="c-card span-2 reg reveal">
+        <img class="c-icon" src="assets/img/card-custom.webp" alt="Gâteau d'anniversaire personnalisé et décoré" loading="lazy">
+        <h3>Créations personnalisées</h3>
+        <p>Une idée, un événement, une envie précise ? On la façonne avec vous.</p>
+        <a class="c-more link-u" href="#carte" data-goto="custom">Voir la carte <span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Prix indicatifs : à ajuster par le pâtissier, ce sont des valeurs provisoires en attendant la carte définitive. -->
+<section class="carte" id="carte">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">La carte</p>
+      <h2>Notre carte</h2>
+      <p>Nos classiques signature, épaulés par les envies qui font vibrer la pâtisserie en ce moment — chocolat-pistache, ube violet, matcha, bento cakes et formats miniatures.</p>
+    </div>
+    <div class="carte-filters" role="group" aria-label="Filtrer la carte par catégorie">
+      <button class="filter-pill active" type="button" data-filter="tout" aria-pressed="true">Tout</button>
+      <button class="filter-pill" type="button" data-filter="cookies" aria-pressed="false">Cookies</button>
+      <button class="filter-pill" type="button" data-filter="gateaux" aria-pressed="false">Gâteaux</button>
+      <button class="filter-pill" type="button" data-filter="desserts" aria-pressed="false">Desserts</button>
+      <button class="filter-pill" type="button" data-filter="tartes" aria-pressed="false">Tartes</button>
+      <button class="filter-pill" type="button" data-filter="brownies" aria-pressed="false">Brownies</button>
+      <button class="filter-pill" type="button" data-filter="custom" aria-pressed="false">Sur-mesure</button>
+    </div>
+    <div class="carte-grid">
+      <article class="p-card reveal" data-category="cookies" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--signature">Signature</span>
+          <img src="assets/img/card-cookies.webp" alt="Cookie aux pépites de chocolat noir, bords craquants et cœur fondant" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Cookies pépites de chocolat</h3>
+          <p>Bords craquants, cœur fondant, pépites de chocolat noir généreuses.</p>
+          <span class="p-price">250 DA</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="cookies" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-cookie-choc-pistache.webp" alt="Cookie garni de coulis de chocolat et d'éclats de pistache" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Cookie choco-pistache</h3>
+          <p>Coulis de chocolat et éclats de pistache, dans l'esprit gourmand qui affole les réseaux.</p>
+          <span class="p-price">300 DA</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="cookies" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-cookie-funfetti.webp" alt="Cookie funfetti recouvert de vermicelles colorés" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Cookie funfetti</h3>
+          <p>Pâte sablée pleine de vermicelles colorés, pour retomber en enfance.</p>
+          <span class="p-price">280 DA</span>
+        </div>
+      </article>
+
+      <article class="p-card reveal" data-category="gateaux" data-prep="48h">
+        <div class="p-media">
+          <span class="p-badge p-badge--signature">Signature</span>
+          <img src="assets/img/card-gateaux.webp" alt="Layer cake au chocolat à trois étages nappé de ganache" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Layer cake chocolat</h3>
+          <p>Trois étages moelleux, ganache généreuse, pour les grandes occasions.</p>
+          <span class="p-price">à partir de 3500 DA</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="gateaux" data-prep="48h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-gateau-basque.webp" alt="Gâteau basque brûlé à la surface caramélisée" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Gâteau basque brûlé</h3>
+          <p>Surface caramélisée, cœur crémeux — le cheesecake brûlé qui a conquis le monde.</p>
+          <span class="p-price">à partir de 3200 DA</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="gateaux" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-gateau-bento.webp" alt="Mini bento cake coréen présenté dans sa boîte" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Bento cake coréen</h3>
+          <p>Mini gâteau rond dans sa boîte, personnalisable, pensé pour une petite fête intime.</p>
+          <span class="p-price">2000 DA</span>
+        </div>
+      </article>
+
+      <article class="p-card reveal" data-category="desserts" data-prep="48h">
+        <div class="p-media">
+          <span class="p-badge p-badge--signature">Signature</span>
+          <img src="assets/img/card-desserts.webp" alt="Assortiment de macarons artisanaux aux parfums variés" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Macarons assortis</h3>
+          <p>Coques craquantes, cœur moelleux, parfums qui changent selon la saison.</p>
+          <span class="p-price">120 DA/pièce</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="desserts" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-dessert-tiramisu-matcha.webp" alt="Tiramisu twisté au matcha et à la pistache" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Tiramisu matcha-pistache</h3>
+          <p>Le classique italien twisté au thé vert et à la pistache.</p>
+          <span class="p-price">450 DA</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="desserts" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-dessert-cakepops.webp" alt="Cake pops au chocolat présentés sur bâtonnet" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Cake pops chocolat</h3>
+          <p>Bouchées sur bâtonnet, parfaites pour un goûter ou un buffet d'anniversaire.</p>
+          <span class="p-price">150 DA/pièce</span>
+        </div>
+      </article>
+
+      <article class="p-card reveal" data-category="tartes" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--signature">Signature</span>
+          <img src="assets/img/card-tartes.webp" alt="Tarte aux fruits de saison sur pâte sablée maison" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Tarte aux fruits de saison</h3>
+          <p>Pâte sablée maison et fruits frais choisis chaque semaine.</p>
+          <span class="p-price">à partir de 1800 DA</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="tartes" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-tarte-mini.webp" alt="Mini tartelettes format bouchée alignées" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Mini tartelettes one-bite</h3>
+          <p>Format miniature à croquer en une bouchée, pour varier les plaisirs sans se priver.</p>
+          <span class="p-price">180 DA/pièce</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="tartes" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-tarte-pistache.webp" alt="Tartelette croustillante garnie de crème pistache" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Tartelette pistache croustillante</h3>
+          <p>Base craquante, crème pistache, dans l'air du temps chocolat-pistache.</p>
+          <span class="p-price">350 DA</span>
+        </div>
+      </article>
+
+      <article class="p-card reveal" data-category="brownies" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--signature">Signature</span>
+          <img src="assets/img/card-brownies.webp" alt="Brownie fondant au chocolat coupé en carrés" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Brownie fondant nature</h3>
+          <p>Dense, fudgy, légèrement salé — un carré suffit rarement.</p>
+          <span class="p-price">220 DA</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="brownies" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-brownie-brookie.webp" alt="Brookie, hybride entre brownie et cookie" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Brookie brownie-cookie</h3>
+          <p>Le meilleur des deux mondes en une seule bouchée épaisse.</p>
+          <span class="p-price">260 DA</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="brownies" data-prep="24h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-brownie-ube.webp" alt="Blondie à l'ube à la teinte violette naturelle" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Blondie violet à l'ube</h3>
+          <p>Une teinte violette naturelle et un goût doux et vanillé, la couleur de l'année.</p>
+          <span class="p-price">260 DA</span>
+        </div>
+      </article>
+
+      <article class="p-card reveal" data-category="custom" data-prep="4 à 5 jours (sur devis)">
+        <div class="p-media">
+          <span class="p-badge p-badge--signature">Signature</span>
+          <img src="assets/img/card-custom.webp" alt="Gâteau sur-mesure décoré selon la demande du client" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Gâteau sur-mesure</h3>
+          <p>Une idée, un événement, une envie précise ? On la façonne avec vous.</p>
+          <span class="p-price">sur devis</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="custom" data-prep="48h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-custom-bento.webp" alt="Bento cake personnalisé avec message écrit à la main" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Bento cake message personnalisé</h3>
+          <p>Mini gâteau avec message écrit à la main, pour une attention qui tient dans une boîte.</p>
+          <span class="p-price">2200 DA</span>
+        </div>
+      </article>
+      <article class="p-card reveal" data-category="custom" data-prep="48h">
+        <div class="p-media">
+          <span class="p-badge p-badge--tendance">Tendance</span>
+          <img src="assets/img/product-custom-cakepops.webp" alt="Cake pops personnalisés aux couleurs sur-mesure" loading="lazy">
+        </div>
+        <div class="p-body">
+          <h3>Cake pops personnalisés</h3>
+          <p>Couleurs et décors sur-mesure pour anniversaires et baby showers.</p>
+          <span class="p-price">170 DA/pièce</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galerie">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Dans les coulisses</p>
+      <h2>La galerie</h2>
+      <p>Textures, couleurs et détails glanés en atelier — un aperçu de ce qui se prépare derrière le comptoir.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item g1 reveal-left"><img class="art" src="assets/img/gallery-caramel.webp" alt="Coulée de caramel sur une pâtisserie" loading="lazy"><span class="cap">Coulée caramel</span></div>
+      <div class="g-item g2 reveal-zoom"><img class="art" src="assets/img/gallery-choc-swirl.webp" alt="Tourbillon de chocolat fondu" loading="lazy"><span class="cap">Tourbillon chocolat</span></div>
+      <div class="g-item g3 reveal-right"><img class="art" src="assets/img/gallery-tartelettes.webp" alt="Tartelettes aux fruits fraîchement dressées" loading="lazy"><span class="cap">Tartelettes aux fruits</span></div>
+      <div class="g-item g4 reveal-left"><img class="art" src="assets/img/gallery-macarons-plate.webp" alt="Macarons dressés sur une assiette" loading="lazy"><span class="cap">Macarons du jour</span></div>
+      <div class="g-item g5 reveal-zoom"><img class="art" src="assets/img/gallery-cupcake-cream.webp" alt="Cupcake surmonté de crème fouettée" loading="lazy"><span class="cap">Cupcake chantilly</span></div>
+      <div class="g-item g6 reveal-right"><img class="art" src="assets/img/gallery-macarons-color.webp" alt="Macarons multicolores" loading="lazy"><span class="cap">Pistache & sucre</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="apropos">
+  <div class="wrap about-grid">
+    <div class="reveal-left">
+      <p class="eyebrow">Notre histoire</p>
+      <h2>Chou a commencé entre deux devoirs, sur un coin de plan de travail.</h2>
+      <p>J'ai 14 ans, je suis lycéen en Algérie, et Chou est né de mes soirées après les cours — le temps de finir mes devoirs, puis d'enfiler un tablier. Pas d'équipe, pas d'atelier de vitrine : juste un four, quelques recettes obstinément retravaillées, et l'envie de faire aussi bien que les grands.</p>
+      <p>Je goûte, je rate, je recommence, souvent tard le soir. Chaque cookie qui sort d'ici a été jugé par le pâtissier le plus sévère que je connaisse : moi-même, entre deux chapitres de révisions.</p>
+      <p class="about-sign">— Farouk, fondateur de Chou</p>
+    </div>
+    <div class="about-figure reveal-zoom">
+      <img src="assets/img/about-dough.webp" alt="Mains façonnant une pâte à la main dans l'atelier" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Cookies <em>✧</em> Gâteaux <em>✧</em> Desserts <em>✧</em> Créations gourmandes <em>✧</em> </span>
+    <span>Cookies <em>✧</em> Gâteaux <em>✧</em> Desserts <em>✧</em> Créations gourmandes <em>✧</em> </span>
+  </div>
+</div>
+
+<section class="cta" id="contact">
+  <div class="cta-blob" aria-hidden="true"></div>
+  <div class="cta-inner reveal">
+    <h2>Une envie de sucré ?</h2>
+    <p>Commandes en ligne, événements sur-mesure ou simple curiosité — on répond toujours avec plaisir.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a class="btn btn-primary" href="#carte">Commander maintenant <span class="arrow" aria-hidden="true">→</span></a>
+      <button type="button" class="btn btn-primary" id="openContactBtn">Nous écrire</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="#accueil">chou<span class="dot">.</span></a>
+        <p>Pâtisserie artisanale — cookies, gâteaux et desserts faits main, chaque jour.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>Navigation</h3>
+          <a href="#accueil">Accueil</a>
+          <a href="#creations">Créations</a>
+          <a href="#carte">Carte</a>
+          <a href="#apropos">À propos</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h3>Atelier</h3>
+          <span>Kouba, Alger</span>
+          <span>Mar–Sam, 9h–19h</span>
+          <a href="mailto:farouk.b2012@icloud.com" target="_blank" rel="noopener">farouk.b2012@icloud.com</a>
+        </div>
+        <div class="footer-col">
+          <h3>Suivre</h3>
+          <!-- Ajouter les vrais liens Instagram/Pinterest/Newsletter quand disponibles -->
+          <span class="footer-soon">Instagram</span>
+          <span class="footer-soon">Pinterest</span>
+          <span class="footer-soon">Newsletter</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Chou Pâtisserie. Tous droits réservés.</span>
+      <span>Fait avec farine, beurre et un peu trop de café.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Modale fiche produit + commande : contenu peuplé dynamiquement en JS depuis les .p-card de #carte.
+     Le PayPal proposé ci-dessous est une préférence de paiement affichée, pas une intégration réelle :
+     aucun paiement en ligne ne se produit sur cette page, la commande part par email. -->
+<div class="modal-backdrop" id="productModal" hidden>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <button type="button" class="modal-close" id="modalClose" aria-label="Fermer la fiche produit">&times;</button>
+
+    <div id="modalProductView">
+      <div class="modal-media">
+        <span class="p-badge p-badge--signature" id="modalBadge"></span>
+        <img id="modalImg" src="" alt="">
+      </div>
+      <div class="modal-body">
+        <h3 id="modalTitle" tabindex="-1"></h3>
+        <p id="modalDesc"></p>
+        <div class="modal-row"><span class="modal-label">Prix</span><span class="p-price" id="modalPrice"></span></div>
+        <div class="modal-row"><span class="modal-label">Temps de préparation</span><span id="modalPrep"></span></div>
+        <div>
+          <span class="modal-label" id="qtyLabel">Quantité</span>
+          <div class="stepper" role="group" aria-labelledby="qtyLabel" style="margin-top:8px;">
+            <button type="button" class="stepper-btn" id="qtyMinus" aria-label="Diminuer la quantité">−</button>
+            <input type="number" id="qtyInput" value="1" min="1" inputmode="numeric" aria-label="Quantité">
+            <button type="button" class="stepper-btn" id="qtyPlus" aria-label="Augmenter la quantité">+</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary modal-order-btn" id="goToOrderForm">Commander</button>
+      </div>
+    </div>
+
+    <div class="modal-form" id="modalFormView" hidden>
+      <button type="button" class="btn btn-text link-u modal-back" id="backToProduct">← Retour</button>
+      <h3 class="modal-form-title">Commander <span id="formProductName"></span></h3>
+
+      <div class="order-summary">
+        <strong id="summaryName"></strong>
+        <span id="summaryQty"></span>
+        <span id="summaryPrice"></span>
+      </div>
+
+      <form id="orderForm" novalidate>
+        <div class="field">
+          <label for="orderName">Nom complet</label>
+          <input type="text" id="orderName" name="orderName" autocomplete="name" required aria-describedby="errName">
+          <span class="field-error" id="errName"></span>
+        </div>
+        <div class="field">
+          <label for="orderPhone">Téléphone</label>
+          <input type="tel" id="orderPhone" name="orderPhone" autocomplete="tel" required aria-describedby="errPhone">
+          <span class="field-error" id="errPhone"></span>
+        </div>
+        <div class="field">
+          <label for="orderEmail">Email <span class="field-help">(optionnel)</span></label>
+          <input type="email" id="orderEmail" name="orderEmail" autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label id="retraitLabel">Mode de retrait</label>
+          <div class="radio-group" role="radiogroup" aria-labelledby="retraitLabel">
+            <label class="radio-pill">
+              <input type="radio" name="retrait" value="surplace" id="retraitSurplace" checked>
+              <span>Retrait sur place</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="retrait" value="livraison" id="retraitLivraison">
+              <span>Livraison</span>
+            </label>
+          </div>
+          <div class="field-collapse" id="addressWrapper">
+            <label for="orderAddress">Adresse de livraison</label>
+            <textarea id="orderAddress" name="orderAddress" rows="2" aria-describedby="deliveryNote errAddress"></textarea>
+            <span class="field-error" id="errAddress"></span>
+            <!-- Frais et zone de livraison : information provisoire, à préciser par le pâtissier dès qu'il aura défini ses conditions réelles. -->
+            <p class="field-help" id="deliveryNote">Zone et frais de livraison à confirmer avec le pâtissier au moment de la commande.</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="orderDate">Date souhaitée</label>
+          <input type="date" id="orderDate" name="orderDate" required aria-describedby="dateHelper errDate">
+          <span class="field-help" id="dateHelper"></span>
+          <span class="field-error" id="errDate"></span>
+        </div>
+
+        <div class="field">
+          <label id="paiementLabel">Mode de paiement</label>
+          <div class="radio-group" role="radiogroup" aria-labelledby="paiementLabel">
+            <label class="radio-pill">
+              <input type="radio" name="paiement" value="especes" id="paiementEspeces" aria-describedby="errPaiement">
+              <span>Espèces à la livraison</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="paiement" value="virement" id="paiementVirement" aria-describedby="errPaiement">
+              <span>Virement bancaire</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="paiement" value="paypal" id="paiementPaypal" aria-describedby="errPaiement">
+              <span>PayPal</span>
+            </label>
+          </div>
+          <p class="radio-note">Pour PayPal : lien à confirmer avec le pâtissier — aucun paiement en ligne n'est disponible sur ce site pour le moment.</p>
+          <span class="field-error" id="errPaiement"></span>
+        </div>
+
+        <div class="field">
+          <label for="orderMessage">Message <span class="field-help">(allergies, personnalisation, etc. — optionnel)</span></label>
+          <textarea id="orderMessage" name="orderMessage" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary modal-submit">Envoyer la commande</button>
+      </form>
+    </div>
+
+    <div class="modal-confirm" id="modalConfirmView" hidden>
+      <div id="confirmAutoState" hidden>
+        <p><strong>Ta commande a été envoyée automatiquement.</strong></p>
+        <p class="field-help">Je te répondrai directement par email ou téléphone pour confirmer les détails.</p>
+      </div>
+      <div id="confirmManualState" hidden>
+        <p><strong>Ta commande est prête à être envoyée.</strong></p>
+        <a class="btn btn-primary" id="confirmMailtoLink" href="#" target="_blank" rel="noopener">Envoyer ma commande par email <span class="arrow" aria-hidden="true">→</span></a>
+        <p class="field-help">Ça ouvre ton application email avec tout déjà rempli — il ne reste plus qu'à cliquer sur « Envoyer » pour que la demande m'arrive.</p>
+        <p class="field-help">Je te répondrai directement par email ou téléphone pour confirmer les détails.</p>
+      </div>
+      <button type="button" class="btn btn-ghost" id="modalConfirmClose">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="contactModal" hidden>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle" tabindex="-1">
+    <button type="button" class="modal-close" id="contactClose" aria-label="Fermer la fenêtre de contact">&times;</button>
+
+    <div id="contactFormView" class="modal-form">
+      <h3 id="contactTitle" tabindex="-1">Nous écrire</h3>
+      <p class="field-help">Une question, une envie particulière ? Écris-nous directement, on te répond au plus vite.</p>
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="contactEmail">Ton email (optionnel, pour qu'on puisse te répondre)</label>
+          <input type="email" id="contactEmail" name="contactEmail" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="contactMessage" rows="6" maxlength="1000" required aria-describedby="contactCount errContactMessage"></textarea>
+          <p class="field-help" id="contactCount">0 / 1000</p>
+          <span class="field-error" id="errContactMessage" role="alert"></span>
+        </div>
+        <button type="submit" class="btn btn-primary modal-submit">Envoyer</button>
+      </form>
+    </div>
+
+    <div class="modal-confirm" id="contactConfirmView" hidden>
+      <div id="contactAutoState" hidden>
+        <p><strong>Ton message a été envoyé.</strong></p>
+        <p class="field-help">On te répondra dès que possible.</p>
+      </div>
+      <div id="contactManualState" hidden>
+        <p><strong>Ton message est prêt à être envoyé.</strong></p>
+        <a class="btn btn-primary" id="contactMailtoLink" href="#" target="_blank" rel="noopener">Envoyer par email <span class="arrow" aria-hidden="true">→</span></a>
+        <p class="field-help">Ça ouvre ton application email avec le message déjà rempli.</p>
+      </div>
+      <button type="button" class="btn btn-ghost" id="contactConfirmClose">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Assistant Chou : widget de chat non-modal, purement client-side (aucun appel réseau, aucune IA réelle).
+     Réponses pré-écrites par mots-clés — voir CLAUDE.md section "Assistant Chou" pour la liste des intentions
+     et la marche à suivre pour en ajouter une nouvelle. -->
+<div class="chat-widget">
+  <button type="button" class="chat-launcher" id="chatLauncher" aria-haspopup="dialog" aria-expanded="false" aria-controls="chatPanel" aria-label="Ouvrir l'assistant Chou">
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+    <span class="chat-ping" id="chatPing" aria-hidden="true"></span>
+  </button>
+
+  <section class="chat-panel" id="chatPanel" role="dialog" aria-label="Assistant Chou">
+    <header class="chat-panel-head">
+      <div>
+        <h3 class="chat-panel-title">Chou · assistant automatique</h3>
+        <p class="chat-panel-sub">Réponses pré-écrites par mots-clés — pas une vraie personne, pas une IA.</p>
+      </div>
+      <button type="button" class="chat-panel-close" id="chatClose" aria-label="Fermer l'assistant Chou">&times;</button>
+    </header>
+    <div class="chat-log" id="chatLog" role="log" aria-live="polite" aria-label="Conversation avec l'assistant Chou"></div>
+    <div class="chat-chips-row">
+      <button type="button" class="chat-chips-nav" id="chatChipsPrev" aria-label="Voir les suggestions précédentes">‹</button>
+      <div class="chat-chips" id="chatChips" aria-label="Sujets suggérés"></div>
+      <button type="button" class="chat-chips-nav" id="chatChipsNext" aria-label="Voir les suggestions suivantes">›</button>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <label class="visually-hidden" for="chatInput">Ta question pour l'assistant Chou</label>
+      <input type="text" id="chatInput" name="chatInput" placeholder="Écris ta question…" autocomplete="off">
+      <button type="submit" class="chat-send" aria-label="Envoyer le message">→</button>
+    </form>
+  </section>
+</div>
+
+<!-- EmailJS : envoie l'email de commande automatiquement (sans dépendre du client mail du visiteur).
+     Ne fonctionne pas dans l'aperçu Artifact (requête réseau bloquée par son bac à sable) — seulement
+     une fois le site déployé sur un vrai hébergement. Tant qu'aucune vraie clé n'est renseignée plus
+     bas (recherche EMAILJS_PUBLIC_KEY), le site continue d'utiliser uniquement le lien mailto manuel,
+     donc rien ne casse si EmailJS n'est jamais configuré. -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive:true });
+
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  function closeMenu(){
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    mobileMenu.classList.remove('open');
+  }
+  hamburger.addEventListener('click', function(){
+    var open = hamburger.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    mobileMenu.classList.toggle('open', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .c-card, .g-item, .p-card');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry, i){
+        if(entry.isIntersecting){
+          var el = entry.target;
+          var delay = (i % 6) * 70;
+          setTimeout(function(){ el.classList.add('in'); }, delay);
+          io.unobserve(el);
+        }
+      });
+    }, { threshold:0.16, rootMargin:'0px 0px -8% 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  var creationsGrid = document.querySelector('.creations-grid');
+  if(creationsGrid && 'IntersectionObserver' in window){
+    var cards = creationsGrid.querySelectorAll('.c-card');
+    var gridIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          cards.forEach(function(card, i){
+            setTimeout(function(){ card.classList.add('in'); }, i * 90);
+          });
+          gridIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.1 });
+    gridIO.observe(creationsGrid);
+  }
+
+  var carteGrid = document.querySelector('.carte-grid');
+  if(carteGrid && 'IntersectionObserver' in window){
+    var pCards = carteGrid.querySelectorAll('.p-card');
+    var carteIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          pCards.forEach(function(card, i){
+            setTimeout(function(){ card.classList.add('in'); }, i * 45);
+          });
+          carteIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.05 });
+    carteIO.observe(carteGrid);
+  }
+
+  var filterPills = document.querySelectorAll('.filter-pill');
+  var productCards = document.querySelectorAll('.carte-grid .p-card');
+
+  // Fonction de filtrage unique, réutilisée par les pastilles ET par les liens
+  // "Voir la carte" des cartes créations (#creations), pour ne jamais dupliquer la logique.
+  function applyCarteFilter(filter){
+    filterPills.forEach(function(p){
+      var match = p.dataset.filter === filter;
+      p.classList.toggle('active', match);
+      p.setAttribute('aria-pressed', match ? 'true' : 'false');
+    });
+    productCards.forEach(function(card){
+      var show = filter === 'tout' || card.dataset.category === filter;
+      card.classList.toggle('p-hidden', !show);
+    });
+  }
+
+  filterPills.forEach(function(pill){
+    pill.addEventListener('click', function(){ applyCarteFilter(pill.dataset.filter); });
+  });
+
+  // Exposée globalement pour être réutilisée telle quelle par le widget "Assistant Chou"
+  // (bloc <script> séparé, plus bas), qui ne doit jamais dupliquer cette logique de filtrage.
+  window.applyCarteFilter = applyCarteFilter;
+
+  // Cartes "Nos créations" -> filtre correspondant + scroll vers #carte.
+  var carteSection = document.getElementById('carte');
+  document.querySelectorAll('.c-more[data-goto]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      applyCarteFilter(link.dataset.goto);
+      if(carteSection){ carteSection.scrollIntoView({ block:'start' }); }
+    });
+  });
+
+  /* ---------- modale fiche produit + commande ---------- */
+  (function(){
+    var modalBackdrop = document.getElementById('productModal');
+    if(!modalBackdrop) return;
+    var modalPanel = modalBackdrop.querySelector('.modal-panel');
+    var modalClose = document.getElementById('modalClose');
+    var modalProductView = document.getElementById('modalProductView');
+    var modalFormView = document.getElementById('modalFormView');
+    var modalConfirmView = document.getElementById('modalConfirmView');
+    var modalImg = document.getElementById('modalImg');
+    var modalBadge = document.getElementById('modalBadge');
+    var modalTitle = document.getElementById('modalTitle');
+    var modalDesc = document.getElementById('modalDesc');
+    var modalPrice = document.getElementById('modalPrice');
+    var modalPrep = document.getElementById('modalPrep');
+    var qtyInput = document.getElementById('qtyInput');
+    var qtyMinus = document.getElementById('qtyMinus');
+    var qtyPlus = document.getElementById('qtyPlus');
+    var goToOrderForm = document.getElementById('goToOrderForm');
+    var backToProduct = document.getElementById('backToProduct');
+    var formProductName = document.getElementById('formProductName');
+    var summaryName = document.getElementById('summaryName');
+    var summaryQty = document.getElementById('summaryQty');
+    var summaryPrice = document.getElementById('summaryPrice');
+    var orderForm = document.getElementById('orderForm');
+    var orderName = document.getElementById('orderName');
+    var orderPhone = document.getElementById('orderPhone');
+    var orderEmail = document.getElementById('orderEmail');
+    var orderAddress = document.getElementById('orderAddress');
+    var addressWrapper = document.getElementById('addressWrapper');
+    var orderDate = document.getElementById('orderDate');
+    var dateHelper = document.getElementById('dateHelper');
+    var orderMessage = document.getElementById('orderMessage');
+    var modalConfirmClose = document.getElementById('modalConfirmClose');
+    var confirmMailtoLink = document.getElementById('confirmMailtoLink');
+    var confirmAutoState = document.getElementById('confirmAutoState');
+    var confirmManualState = document.getElementById('confirmManualState');
+
+    // Configuration EmailJS — remplace ces 3 valeurs par les tiennes une fois ton compte créé sur
+    // emailjs.com (Service ID dans "Email Services", Template ID dans "Email Templates", Public Key
+    // dans "Account > General"). Ce ne sont pas des secrets à protéger comme un mot de passe : EmailJS
+    // les conçoit pour vivre en clair dans le code d'un site. Tant que EMAILJS_PUBLIC_KEY commence par
+    // "YOUR_", le site n'essaie même pas d'appeler EmailJS et se contente du lien mailto manuel — donc
+    // rien ne casse si EmailJS n'est jamais configuré.
+    var EMAILJS_SERVICE_ID = 'YOUR_EMAILJS_SERVICE_ID';
+    var EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
+    var EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY';
+    var emailjsReady = false;
+    try{
+      if(window.emailjs && EMAILJS_PUBLIC_KEY.indexOf('YOUR_') !== 0){
+        window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+        emailjsReady = true;
+      }
+    }catch(e){ emailjsReady = false; }
+
+    function setConfirmMode(mode){
+      if(confirmAutoState){ confirmAutoState.hidden = mode !== 'auto'; }
+      if(confirmManualState){ confirmManualState.hidden = mode !== 'manual'; }
+    }
+
+    var currentProduct = null;
+    var lastTrigger = null;
+
+    function getFocusable(container){
+      return Array.prototype.slice.call(
+        container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')
+      ).filter(function(el){ return el.offsetParent !== null; });
+    }
+
+    function extractProductData(card){
+      var img = card.querySelector('.p-media img');
+      var badge = card.querySelector('.p-badge');
+      var h3 = card.querySelector('.p-body h3');
+      var desc = card.querySelector('.p-body p');
+      var price = card.querySelector('.p-price');
+      return {
+        name: h3 ? h3.textContent.trim() : '',
+        desc: desc ? desc.textContent.trim() : '',
+        price: price ? price.textContent.trim() : '',
+        imgSrc: img ? img.getAttribute('src') : '',
+        imgAlt: img ? img.getAttribute('alt') : '',
+        badgeText: badge ? badge.textContent.trim() : '',
+        badgeVariant: (badge && badge.classList.contains('p-badge--tendance')) ? 'tendance' : 'signature',
+        prep: card.dataset.prep || '',
+        qty: 1
+      };
+    }
+
+    // Convertit "24h" / "48h" / "4 à 5 jours (...)" en nombre d'heures, pour calculer une date
+    // minimale réaliste (pas décorative) à partir d'aujourd'hui + temps de préparation.
+    function parsePrepHours(str){
+      var hMatch = str.match(/(\d+)\s*h/i);
+      if(hMatch){ return parseInt(hMatch[1], 10); }
+      var dMatch = str.match(/(\d+)\s*(?:à\s*(\d+)\s*)?jours?/i);
+      if(dMatch){
+        var maxDays = dMatch[2] ? parseInt(dMatch[2], 10) : parseInt(dMatch[1], 10);
+        return maxDays * 24;
+      }
+      return 24;
+    }
+    function computeMinDate(prepStr){
+      var hours = parsePrepHours(prepStr);
+      var days = Math.max(1, Math.ceil(hours / 24));
+      var d = new Date();
+      d.setDate(d.getDate() + days);
+      return d;
+    }
+    function toISODate(d){
+      var y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,'0'), day = String(d.getDate()).padStart(2,'0');
+      return y + '-' + m + '-' + day;
+    }
+    function toFRDate(d){ return d.toLocaleDateString('fr-FR'); }
+
+    // Extrait un prix numérique unitaire d'une chaîne comme "300 DA", "à partir de 3500 DA",
+    // "120 DA/pièce" ou "sur devis" -- ce dernier cas n'a pas de total calculable.
+    function parsePrice(str){
+      if(/devis/i.test(str)){ return { quote:true }; }
+      var match = str.match(/(\d[\d\s]*)/);
+      var value = match ? parseInt(match[1].replace(/\s+/g,''), 10) : null;
+      return { quote:false, value:value, approx:/à partir de/i.test(str) };
+    }
+
+    function populateProductView(p){
+      modalImg.src = p.imgSrc; modalImg.alt = p.imgAlt;
+      modalBadge.textContent = p.badgeText;
+      modalBadge.className = 'p-badge ' + (p.badgeVariant === 'tendance' ? 'p-badge--tendance' : 'p-badge--signature');
+      modalTitle.textContent = p.name;
+      modalDesc.textContent = p.desc;
+      modalPrice.textContent = p.price;
+      modalPrep.textContent = p.prep;
+      qtyInput.value = 1;
+    }
+
+    function toggleAddressField(show){
+      addressWrapper.classList.toggle('open', show);
+      addressWrapper.setAttribute('aria-hidden', show ? 'false' : 'true');
+      orderAddress.required = show;
+      if(show){ orderAddress.removeAttribute('tabindex'); }
+      else { orderAddress.tabIndex = -1; orderAddress.value = ''; }
+      var err = document.getElementById('errAddress');
+      if(err){ err.textContent = ''; }
+    }
+
+    function populateOrderForm(p){
+      formProductName.textContent = p.name;
+      summaryName.textContent = p.name;
+      summaryQty.textContent = 'Quantité : ' + p.qty;
+      summaryPrice.textContent = 'Prix unitaire : ' + p.price;
+      var minDate = computeMinDate(p.prep);
+      orderDate.min = toISODate(minDate);
+      dateHelper.textContent = 'Compte tenu du temps de préparation (' + p.prep + '), merci de choisir une date à partir du ' + toFRDate(minDate) + '.';
+    }
+
+    function clearFormErrors(){
+      orderForm.querySelectorAll('.field-error').forEach(function(span){ span.textContent = ''; });
+      orderForm.querySelectorAll('[aria-invalid]').forEach(function(el){ el.removeAttribute('aria-invalid'); });
+    }
+
+    function setError(id, message, focusEl, focusState){
+      var span = document.getElementById(id);
+      if(span){ span.textContent = message; }
+      if(focusEl){ focusEl.setAttribute('aria-invalid','true'); }
+      if(focusEl && !focusState.done){ focusEl.focus(); focusState.done = true; }
+    }
+
+    function resetOrderForm(){
+      orderForm.reset();
+      clearFormErrors();
+      toggleAddressField(false);
+    }
+
+    function showStep(step){
+      modalProductView.hidden = step !== 'product';
+      modalFormView.hidden = step !== 'form';
+      modalConfirmView.hidden = step !== 'confirm';
+      var focusTarget = step === 'product' ? modalTitle : step === 'form' ? orderName : modalConfirmClose;
+      if(focusTarget){ setTimeout(function(){ focusTarget.focus(); }, reduced ? 0 : 30); }
+    }
+
+    function onModalKeydown(e){
+      if(e.key === 'Escape'){ e.preventDefault(); closeModal(); return; }
+      if(e.key === 'Tab'){
+        var focusables = getFocusable(modalPanel);
+        if(!focusables.length) return;
+        var first = focusables[0], last = focusables[focusables.length - 1];
+        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+    }
+
+    function openModal(card){
+      currentProduct = extractProductData(card);
+      lastTrigger = card;
+      populateProductView(currentProduct);
+      showStep('product');
+      modalBackdrop.hidden = false;
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', onModalKeydown);
+      requestAnimationFrame(function(){
+        modalBackdrop.classList.add('open');
+        setTimeout(function(){ modalPanel.focus(); }, reduced ? 0 : 60);
+      });
+    }
+
+    function closeModal(){
+      modalBackdrop.classList.remove('open');
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onModalKeydown);
+      var done = false;
+      var fallbackId;
+      var finish = function(){
+        if(done) return;
+        done = true;
+        clearTimeout(fallbackId);
+        modalBackdrop.hidden = true;
+        showStep('product');
+        resetOrderForm();
+        if(lastTrigger){ lastTrigger.focus(); }
+      };
+      if(reduced){
+        // Sous prefers-reduced-motion, la transition est écrasée à .01ms par la règle globale :
+        // attendre transitionend serait une course perdue d'avance (l'event peut se déclencher
+        // avant même que le listener soit attaché). On saute directement à la fin.
+        finish();
+        return;
+      }
+      // Se synchronise sur la vraie durée de la transition CSS du fond (.modal-backdrop, .4s)
+      // au lieu de dupliquer cette valeur en dur ici. Filet de sécurité généreux si transitionend
+      // ne se déclenche jamais pour une raison ou une autre (élément retiré entre-temps, etc.).
+      modalBackdrop.addEventListener('transitionend', finish, { once:true });
+      fallbackId = setTimeout(finish, 800);
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', function(e){ if(e.target === modalBackdrop){ closeModal(); } });
+    modalConfirmClose.addEventListener('click', closeModal);
+
+    qtyMinus.addEventListener('click', function(){
+      var v = parseInt(qtyInput.value, 10) || 1;
+      if(v > 1){ qtyInput.value = v - 1; }
+    });
+    qtyPlus.addEventListener('click', function(){
+      var v = parseInt(qtyInput.value, 10) || 1;
+      qtyInput.value = v + 1;
+    });
+    qtyInput.addEventListener('change', function(){
+      var v = parseInt(qtyInput.value, 10);
+      if(!v || v < 1){ qtyInput.value = 1; }
+    });
+
+    goToOrderForm.addEventListener('click', function(){
+      currentProduct.qty = parseInt(qtyInput.value, 10) || 1;
+      populateOrderForm(currentProduct);
+      showStep('form');
+    });
+    backToProduct.addEventListener('click', function(){ showStep('product'); });
+
+    document.querySelectorAll('input[name="retrait"]').forEach(function(radio){
+      radio.addEventListener('change', function(){ toggleAddressField(this.value === 'livraison'); });
+    });
+    toggleAddressField(false);
+
+    orderForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      clearFormErrors();
+      var focusState = { done:false };
+      var valid = true;
+
+      var name = orderName.value.trim();
+      var phone = orderPhone.value.trim();
+      var retrait = document.querySelector('input[name="retrait"]:checked');
+      var address = orderAddress.value.trim();
+      var date = orderDate.value;
+      var paiement = document.querySelector('input[name="paiement"]:checked');
+
+      if(!name){ setError('errName', 'Merci d’indiquer ton nom complet.', orderName, focusState); valid = false; }
+      if(!phone){ setError('errPhone', 'Merci d’indiquer un numéro de téléphone.', orderPhone, focusState); valid = false; }
+      if(!date){ setError('errDate', 'Merci de choisir une date souhaitée.', orderDate, focusState); valid = false; }
+      if(!paiement){ setError('errPaiement', 'Merci de choisir un mode de paiement.', document.getElementById('paiementEspeces'), focusState); valid = false; }
+      if(retrait && retrait.value === 'livraison' && !address){
+        setError('errAddress', 'Merci d’indiquer une adresse de livraison.', orderAddress, focusState); valid = false;
+      }
+
+      if(!valid) return;
+
+      var qty = currentProduct.qty || 1;
+      var priceInfo = parsePrice(currentProduct.price);
+      var totalText;
+      if(priceInfo.quote || priceInfo.value == null){
+        totalText = currentProduct.price + ' (total à confirmer avec le pâtissier)';
+      } else {
+        totalText = (priceInfo.approx ? 'à partir de ' : '') + (priceInfo.value * qty) + ' DA';
+      }
+
+      var retraitLabel = retrait.value === 'livraison' ? 'Livraison' : 'Retrait sur place (Kouba, Alger)';
+      var paiementLabels = {
+        especes: 'Espèces à la livraison / au retrait',
+        virement: 'Virement bancaire',
+        paypal: 'PayPal (lien à confirmer avec le pâtissier)'
+      };
+
+      var subject = 'Commande Chou — ' + currentProduct.name + ' x' + qty;
+      var lines = [
+        'Nouvelle demande de commande — Chou.',
+        '',
+        'Produit : ' + currentProduct.name,
+        'Quantité : ' + qty,
+        'Prix unitaire : ' + currentProduct.price,
+        'Total estimé : ' + totalText,
+        'Temps de préparation : ' + currentProduct.prep,
+        '',
+        'Nom complet : ' + name,
+        'Téléphone : ' + phone,
+        'Email : ' + (orderEmail.value.trim() || '—'),
+        'Mode de retrait : ' + retraitLabel + (retrait.value === 'livraison' ? ('\nAdresse de livraison : ' + address) : ''),
+        'Date souhaitée : ' + toFRDate(new Date(date + 'T00:00:00')),
+        'Mode de paiement : ' + (paiementLabels[paiement.value] || paiement.value),
+        'Message : ' + (orderMessage.value.trim() || '—'),
+        '',
+        'Merci de confirmer cette commande par retour de mail.'
+      ];
+
+      var mailtoUrl = 'mailto:farouk.b2012@icloud.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+
+      // Le lien mailto n'est déclenché QUE par un vrai clic de l'utilisateur sur le bouton de l'écran
+      // de confirmation (voir #confirmMailtoLink ci-dessous) — jamais via un clic synthétisé en JS sur
+      // un lien caché. Un clic script-only sur un lien mailto/protocole externe est bloqué (ou ouvre
+      // une page blanche) par le bac à sable de l'aperçu Artifact ; un vrai clic utilisateur, lui,
+      // fonctionne partout (aperçu Artifact comme site déployé normalement).
+      if(confirmMailtoLink){ confirmMailtoLink.href = mailtoUrl; }
+
+      if(emailjsReady){
+        var templateParams = {
+          product_name: currentProduct.name,
+          quantity: qty,
+          unit_price: currentProduct.price,
+          total: totalText,
+          prep_time: currentProduct.prep,
+          customer_name: name,
+          customer_phone: phone,
+          customer_email: orderEmail.value.trim() || '—',
+          pickup_mode: retraitLabel,
+          delivery_address: retrait.value === 'livraison' ? address : '—',
+          order_date: toFRDate(new Date(date + 'T00:00:00')),
+          payment_method: paiementLabels[paiement.value] || paiement.value,
+          message: orderMessage.value.trim() || '—'
+        };
+        window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams).then(
+          function(){ setConfirmMode('auto'); showStep('confirm'); },
+          function(){ setConfirmMode('manual'); showStep('confirm'); }
+        );
+      } else {
+        setConfirmMode('manual');
+        showStep('confirm');
+      }
+    });
+
+    productCards.forEach(function(card){
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-haspopup', 'dialog');
+      var h3 = card.querySelector('.p-body h3');
+      if(h3){ card.setAttribute('aria-label', 'Voir la fiche produit : ' + h3.textContent.trim()); }
+      card.addEventListener('click', function(){ openModal(card); });
+      card.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){
+          e.preventDefault();
+          openModal(card);
+        }
+      });
+    });
+
+    // --- Fenêtre "Nous écrire" : même pattern de modale que #productModal (focus trap via
+    // getFocusable, fermeture Échap/backdrop/bouton, transitionend + filet de sécurité) et même
+    // logique EmailJS/repli mailto que le formulaire de commande (emailjsReady défini plus haut).
+    var contactBackdrop = document.getElementById('contactModal');
+    var contactOpenBtn = document.getElementById('openContactBtn');
+    if(contactBackdrop && contactOpenBtn){
+      var contactPanel = contactBackdrop.querySelector('.modal-panel');
+      var contactCloseBtn = document.getElementById('contactClose');
+      var contactFormView = document.getElementById('contactFormView');
+      var contactConfirmView = document.getElementById('contactConfirmView');
+      var contactConfirmCloseBtn = document.getElementById('contactConfirmClose');
+      var contactFormEl = document.getElementById('contactForm');
+      var contactEmailInput = document.getElementById('contactEmail');
+      var contactMessageInput = document.getElementById('contactMessage');
+      var contactCounterEl = document.getElementById('contactCount');
+      var contactErrSpan = document.getElementById('errContactMessage');
+      var contactAutoStateEl = document.getElementById('contactAutoState');
+      var contactManualStateEl = document.getElementById('contactManualState');
+      var contactMailtoLinkEl = document.getElementById('contactMailtoLink');
+      var contactTitleEl = document.getElementById('contactTitle');
+      var contactLastTrigger = null;
+
+      var setContactMode = function(mode){
+        if(contactAutoStateEl){ contactAutoStateEl.hidden = mode !== 'auto'; }
+        if(contactManualStateEl){ contactManualStateEl.hidden = mode !== 'manual'; }
+      };
+
+      var resetContactForm = function(){
+        contactFormEl.reset();
+        contactCounterEl.textContent = '0 / 1000';
+        contactErrSpan.textContent = '';
+        contactMessageInput.removeAttribute('aria-invalid');
+        contactFormView.hidden = false;
+        contactConfirmView.hidden = true;
+      };
+
+      var onContactKeydown = function(e){
+        if(e.key === 'Escape'){ e.preventDefault(); closeContact(); return; }
+        if(e.key === 'Tab'){
+          var focusables = getFocusable(contactPanel);
+          if(!focusables.length) return;
+          var first = focusables[0], last = focusables[focusables.length - 1];
+          if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+          else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+        }
+      };
+
+      function openContact(){
+        contactLastTrigger = contactOpenBtn;
+        resetContactForm();
+        contactBackdrop.hidden = false;
+        document.body.style.overflow = 'hidden';
+        document.addEventListener('keydown', onContactKeydown);
+        requestAnimationFrame(function(){
+          contactBackdrop.classList.add('open');
+          setTimeout(function(){ contactMessageInput.focus(); }, reduced ? 0 : 60);
+        });
+      }
+
+      function closeContact(){
+        contactBackdrop.classList.remove('open');
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', onContactKeydown);
+        var done = false, fallbackId;
+        var finish = function(){
+          if(done) return;
+          done = true;
+          clearTimeout(fallbackId);
+          contactBackdrop.hidden = true;
+          resetContactForm();
+          if(contactLastTrigger){ contactLastTrigger.focus(); }
+        };
+        if(reduced){ finish(); return; }
+        contactBackdrop.addEventListener('transitionend', finish, { once:true });
+        fallbackId = setTimeout(finish, 800);
+      }
+
+      contactOpenBtn.addEventListener('click', openContact);
+      contactCloseBtn.addEventListener('click', closeContact);
+      contactConfirmCloseBtn.addEventListener('click', closeContact);
+      contactBackdrop.addEventListener('click', function(e){ if(e.target === contactBackdrop){ closeContact(); } });
+
+      contactMessageInput.addEventListener('input', function(){
+        contactCounterEl.textContent = contactMessageInput.value.length + ' / 1000';
+      });
+
+      contactFormEl.addEventListener('submit', function(e){
+        e.preventDefault();
+        contactErrSpan.textContent = '';
+        contactMessageInput.removeAttribute('aria-invalid');
+        var message = contactMessageInput.value.trim();
+        if(!message){
+          contactErrSpan.textContent = 'Écris un message avant d’envoyer.';
+          contactMessageInput.setAttribute('aria-invalid', 'true');
+          contactMessageInput.focus();
+          return;
+        }
+
+        var fromEmail = contactEmailInput.value.trim() || '—';
+        var contactSubject = 'Message depuis le site — Chou';
+        var contactBody = 'Nouveau message via "Nous écrire"\n\nEmail du visiteur : ' + fromEmail + '\n\n' + message;
+        var contactMailtoUrl = 'mailto:farouk.b2012@icloud.com?subject=' + encodeURIComponent(contactSubject) + '&body=' + encodeURIComponent(contactBody);
+        if(contactMailtoLinkEl){ contactMailtoLinkEl.href = contactMailtoUrl; }
+
+        if(emailjsReady){
+          var contactParams = {
+            product_name: 'Message de contact (formulaire "Nous écrire")',
+            quantity: '—',
+            unit_price: '—',
+            total: '—',
+            prep_time: '—',
+            customer_name: '—',
+            customer_phone: '—',
+            customer_email: fromEmail,
+            pickup_mode: '—',
+            delivery_address: '—',
+            order_date: '—',
+            payment_method: '—',
+            message: message
+          };
+          window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactParams).then(
+            function(){ setContactMode('auto'); contactFormView.hidden = true; contactConfirmView.hidden = false; },
+            function(){ setContactMode('manual'); contactFormView.hidden = true; contactConfirmView.hidden = false; }
+          );
+        } else {
+          setContactMode('manual');
+          contactFormView.hidden = true;
+          contactConfirmView.hidden = false;
+        }
+      });
+    }
+  })();
+
+  if(!reduced){
+    var desserts = document.querySelectorAll('.dessert[data-speed]');
+    var hero = document.querySelector('.hero');
+    var ticking = false;
+    function updateParallax(){
+      if(window.innerWidth <= 920){ ticking = false; return; }
+      var scrollY = window.scrollY;
+      var heroHeight = hero ? hero.offsetHeight : 800;
+      if(scrollY < heroHeight * 1.4){
+        desserts.forEach(function(el){
+          var speed = parseFloat(el.dataset.speed) || 0.2;
+          el.style.setProperty('--py', (scrollY * speed * -1) + 'px');
+          el.style.transform = 'translateY(var(--py))';
+        });
+      }
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!ticking){ window.requestAnimationFrame(updateParallax); ticking = true; }
+    }, { passive:true });
+  }
+
+  var isFinePointer = window.matchMedia('(pointer:fine)').matches;
+  if(isFinePointer && !reduced){
+    var dot = document.getElementById('cursorDot');
+    var ring = document.getElementById('cursorRing');
+    document.body.classList.add('cursor-active');
+    var mx = -100, my = -100, rx = -100, ry = -100;
+    window.addEventListener('mousemove', function(e){
+      mx = e.clientX; my = e.clientY;
+      dot.style.transform = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)';
+    });
+    function loop(){
+      rx += (mx - rx) * 0.16;
+      ry += (my - ry) * 0.16;
+      ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)';
+      requestAnimationFrame(loop);
+    }
+    loop();
+    var hoverTargets = document.querySelectorAll('a, button, .c-card, .g-item, .p-card, .dessert');
+    hoverTargets.forEach(function(el){
+      el.addEventListener('mouseenter', function(){
+        ring.classList.add(el.classList.contains('dessert') || el.classList.contains('g-item') ? 'big' : 'btnhover');
+      });
+      el.addEventListener('mouseleave', function(){
+        ring.classList.remove('big','btnhover');
+      });
+    });
+  } else {
+    var dotEl = document.getElementById('cursorDot');
+    var ringEl = document.getElementById('cursorRing');
+    if(dotEl) dotEl.style.display = 'none';
+    if(ringEl) ringEl.style.display = 'none';
+  }
+})();
+</script>
+
+<!-- ---------- Assistant Chou : bloc JS autonome, séparé de la modale/du filtre/du parallax ----------
+     Rien ici n'est de l'IA : simple correspondance de mots-clés sur une liste d'intentions
+     {label, keywords, reply, chips?}. Voir CLAUDE.md pour la doc et comment ajouter une entrée. -->
+<script>
+(function(){
+  var launcher = document.getElementById('chatLauncher');
+  var panel = document.getElementById('chatPanel');
+  var closeBtn = document.getElementById('chatClose');
+  var log = document.getElementById('chatLog');
+  var chipsWrap = document.getElementById('chatChips');
+  var form = document.getElementById('chatForm');
+  var input = document.getElementById('chatInput');
+  var ping = document.getElementById('chatPing');
+  if(!launcher || !panel || !form) return;
+
+  var reducedChat = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGreeted = false;
+
+  // Retire les accents pour une correspondance de mots-clés plus tolérante (délai/delai, etc.).
+  function normalize(str){
+    return (str || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+  }
+
+  // Source de vérité unique des réponses automatiques. Pour ajouter une nouvelle question :
+  // ajouter un objet { label, keywords:[...], reply, chips? } à ce tableau. `label` sert à la fois
+  // de texte de pastille suggérée et de "message utilisateur" affiché quand on clique la pastille.
+  // `chips` (optionnel) propose des catégories de la carte : `filter` doit correspondre à une valeur
+  // data-filter existante de #carte, réutilisée via window.applyCarteFilter (jamais dupliquée ici).
+  var CHAT_INTENTS = [
+    {
+      id: 'horaires',
+      label: 'Horaires & retrait',
+      keywords: ['horaire', 'heure', 'ouvert', 'ouverture', 'ferme', 'fermeture', 'retrait', 'recuperer', 'ou etes-vous', 'ou es-tu', 'ou puis-je', 'adresse', 'atelier', 'kouba', 'localisation'],
+      reply: 'Le retrait se fait à Kouba, Alger, du mardi au samedi entre 9h et 19h.'
+    },
+    {
+      id: 'delais',
+      label: 'Délais de préparation',
+      keywords: ['delai', 'preparation', 'combien de temps', 'temps de', 'avance', 'quand sera pret', 'pret quand', 'jours a l avance', 'ca prend combien'],
+      reply: "Ça dépend du produit : compte 24 à 48h pour la plupart des cookies, gâteaux et desserts, et 4 à 5 jours pour un gâteau entièrement sur-mesure. Le délai exact est affiché sur chaque fiche produit dans « Notre carte »."
+    },
+    {
+      id: 'livraison',
+      label: 'Livraison',
+      keywords: ['livraison', 'livrer', 'livre a domicile', 'livre', 'expedition', 'zone de livraison', 'frais de livraison'],
+      reply: 'La livraison est possible, mais la zone et les frais sont à confirmer directement avec moi au moment de la commande.'
+    },
+    {
+      id: 'paiement',
+      label: 'Moyens de paiement',
+      keywords: ['paiement', 'payer', 'paypal', 'virement', 'especes', 'carte bancaire', ' cb ', 'mode de paiement', 'comment payer'],
+      reply: "Espèces à la livraison ou au retrait, virement bancaire, ou PayPal à confirmer ensemble. Aucune carte bancaire n'est demandée sur le site."
+    },
+    {
+      id: 'prix',
+      label: 'Prix',
+      keywords: ['prix', 'tarif', 'coute', 'ca coute', 'dinar', ' da ', 'combien pour'],
+      reply: "Chaque fiche produit affiche son prix dans « Notre carte » — ce sont des tarifs indicatifs, je les confirme avec toi au moment de la commande."
+    },
+    {
+      id: 'commander',
+      label: 'Comment commander ?',
+      keywords: ['commander', 'commande', 'acheter', 'passer commande', 'comment faire pour', 'comment ca marche', 'process'],
+      reply: "Va dans « Notre carte », clique sur un produit qui te tente, choisis ta quantité, puis « Commander ». Ça ouvre un petit formulaire, et je reçois ta demande par email — je te réponds ensuite pour confirmer."
+    },
+    {
+      id: 'cadeau',
+      label: 'Je cherche un cadeau',
+      keywords: ['cadeau', 'anniversaire', 'offrir', 'surprise', 'evenement', 'baby shower', 'mariage', 'fete', 'aid', 'ramadan', 'ftour'],
+      reply: "Pour un cadeau qui fait son effet : un gâteau sur-mesure, un bento cake personnalisé, ou une jolie boîte de macarons. Choisis une catégorie pour voir ce qui existe :",
+      chips: [
+        { label: 'Gâteau sur-mesure', filter: 'custom' },
+        { label: 'Gâteaux', filter: 'gateaux' },
+        { label: 'Desserts', filter: 'desserts' }
+      ]
+    },
+    {
+      id: 'allergies',
+      label: 'Allergies / personnalisation',
+      keywords: ['allergie', 'allergique', 'sans gluten', 'sans lactose', 'intolerance', 'personnalis', 'vegan', 'sans sucre', 'ingredient', 'composition'],
+      reply: "Précise-le dans le champ message du formulaire de commande, je m'adapte autant que possible."
+    },
+    {
+      id: 'robot',
+      label: 'Es-tu un robot ?',
+      keywords: ['es-tu un robot', 'es tu une ia', 'es-tu humain', 't es qui', 'qui es-tu', 'es-tu reel', 'vraie personne'],
+      reply: "Non, je suis un assistant automatique qui répond par mots-clés — pas une vraie personne, pas une IA. Pour parler directement à Farouk, écris à <a href=\"mailto:farouk.b2012@icloud.com\" target=\"_blank\" rel=\"noopener\">farouk.b2012@icloud.com</a>."
+    },
+    {
+      id: 'salut',
+      label: 'Bonjour',
+      keywords: ['bonjour', 'salut', 'coucou', 'bonsoir', 'hello'],
+      reply: "Salut ! Choisis un sujet ci-dessous, ou dis-moi directement ce que tu cherches."
+    },
+    {
+      id: 'merci',
+      label: 'Merci',
+      keywords: ['merci', 'super', 'parfait'],
+      reply: "Avec plaisir ! N'hésite pas si tu as d'autres questions."
+    }
+  ];
+
+  var FALLBACK_HTML = "Je ne suis qu'un petit assistant avec des réponses toutes prêtes — pour tout le reste, écris directement à Farouk par <a href=\"mailto:farouk.b2012@icloud.com\" target=\"_blank\" rel=\"noopener\">email</a> ou par <a href=\"https://wa.me/213555528051?text=Bonjour%20Chou%2C%20j%27ai%20une%20question%20%3A%20\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.";
+
+  // Chips affichées en permanence sous le fil de conversation (les 6 sujets suggérés par le brief),
+  // dans l'ordre demandé — distinct de "cadeau" qui, lui, ne propose pas de filtre direct mais du texte.
+  var STARTER_ORDER = ['horaires', 'delais', 'livraison', 'paiement', 'prix', 'commander', 'cadeau'];
+
+  function findIntent(id){
+    for(var i = 0; i < CHAT_INTENTS.length; i++){ if(CHAT_INTENTS[i].id === id) return CHAT_INTENTS[i]; }
+    return null;
+  }
+
+  function matchIntent(text){
+    var norm = normalize(text);
+    if(!norm) return null;
+    var padded = ' ' + norm + ' ';
+    for(var i = 0; i < CHAT_INTENTS.length; i++){
+      var kws = CHAT_INTENTS[i].keywords;
+      for(var k = 0; k < kws.length; k++){
+        var kw = kws[k];
+        var wholeWord = /^\s|\s$/.test(kw);
+        var needle = wholeWord ? (' ' + normalize(kw) + ' ') : normalize(kw);
+        var haystack = wholeWord ? padded : norm;
+        if(haystack.indexOf(needle) !== -1) return CHAT_INTENTS[i];
+      }
+    }
+    return null;
+  }
+
+  function scrollLogToEnd(){ log.scrollTop = log.scrollHeight; }
+
+  function addUserMessage(text){
+    var div = document.createElement('div');
+    div.className = 'chat-msg user';
+    div.textContent = text;
+    log.appendChild(div);
+    scrollLogToEnd();
+  }
+
+  function addBotHTML(html, chips){
+    var msg = document.createElement('div');
+    msg.className = 'chat-msg bot';
+    msg.innerHTML = html;
+    log.appendChild(msg);
+    if(chips && chips.length){
+      chips.forEach(function(chip){
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'chat-suggest-btn';
+        btn.textContent = chip.label;
+        btn.addEventListener('click', function(){
+          if(typeof window.applyCarteFilter === 'function'){ window.applyCarteFilter(chip.filter); }
+          var carteSection = document.getElementById('carte');
+          if(carteSection){ carteSection.scrollIntoView({ block: 'start' }); }
+          closeChat();
+        });
+        msg.appendChild(btn);
+      });
+    }
+    scrollLogToEnd();
+  }
+
+  function addBotIntentReply(intent){ addBotHTML(intent.reply, intent.chips); }
+  function addBotFallback(){ addBotHTML(FALLBACK_HTML); }
+
+  var chipsPrev = document.getElementById('chatChipsPrev');
+  var chipsNext = document.getElementById('chatChipsNext');
+
+  function updateChipsNavState(){
+    if(!chipsPrev || !chipsNext) return;
+    var maxScroll = chipsWrap.scrollWidth - chipsWrap.clientWidth - 1;
+    chipsPrev.disabled = chipsWrap.scrollLeft <= 0;
+    chipsNext.disabled = maxScroll <= 0 || chipsWrap.scrollLeft >= maxScroll;
+  }
+
+  function scrollChips(dir){
+    var amount = Math.max(chipsWrap.clientWidth * 0.7, 120) * dir;
+    chipsWrap.scrollBy({ left: amount, behavior: reducedChat ? 'auto' : 'smooth' });
+  }
+
+  if(chipsPrev) chipsPrev.addEventListener('click', function(){ scrollChips(-1); });
+  if(chipsNext) chipsNext.addEventListener('click', function(){ scrollChips(1); });
+  chipsWrap.addEventListener('scroll', updateChipsNavState, { passive:true });
+  window.addEventListener('resize', updateChipsNavState, { passive:true });
+
+  function renderStarterChips(){
+    chipsWrap.innerHTML = '';
+    STARTER_ORDER.forEach(function(id){
+      var intent = findIntent(id);
+      if(!intent) return;
+      var chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'chat-chip';
+      chip.textContent = intent.label;
+      chip.addEventListener('click', function(){
+        addUserMessage(intent.label);
+        addBotIntentReply(intent);
+      });
+      chipsWrap.appendChild(chip);
+    });
+    updateChipsNavState();
+  }
+
+  function greetOnce(){
+    if(hasGreeted) return;
+    hasGreeted = true;
+    addBotHTML("Salut, je suis l'assistant de Chou. (Bon d'accord, c'est Farouk qui a écrit ces réponses à l'avance — mais tout ce qui suit ici est automatique.) Pose-moi une question, ou choisis un sujet ci-dessous.");
+    renderStarterChips();
+  }
+
+  function onChatKeydown(e){
+    if(e.key === 'Escape'){ e.preventDefault(); closeChat(); }
+  }
+
+  function openChat(){
+    panel.classList.add('open');
+    launcher.classList.add('open');
+    launcher.setAttribute('aria-expanded', 'true');
+    launcher.setAttribute('aria-label', "Fermer l'assistant Chou");
+    if(ping && ping.parentNode){ ping.parentNode.removeChild(ping); }
+    try{ window.localStorage.setItem('chouChatOpened', '1'); }catch(e){}
+    greetOnce();
+    document.addEventListener('keydown', onChatKeydown);
+    setTimeout(function(){ input.focus(); }, reducedChat ? 0 : 220);
+  }
+
+  function closeChat(){
+    if(!panel.classList.contains('open')) return;
+    panel.classList.remove('open');
+    launcher.classList.remove('open');
+    launcher.setAttribute('aria-expanded', 'false');
+    launcher.setAttribute('aria-label', "Ouvrir l'assistant Chou");
+    document.removeEventListener('keydown', onChatKeydown);
+    launcher.focus();
+  }
+
+  launcher.addEventListener('click', function(){
+    if(panel.classList.contains('open')){ closeChat(); } else { openChat(); }
+  });
+  if(closeBtn){ closeBtn.addEventListener('click', closeChat); }
+
+  // Garde-fou explicite : force l'envoi sur Entrée même si le submit implicite du
+  // formulaire (comportement natif normalement automatique pour un input texte seul)
+  // ne se déclenche pas dans un contexte donné. preventDefault() bloque le submit natif
+  // pour éviter un double envoi si jamais il se déclenche aussi.
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){
+      e.preventDefault();
+      if(typeof form.requestSubmit === 'function'){ form.requestSubmit(); }
+      else { form.dispatchEvent(new Event('submit', { cancelable:true, bubbles:true })); }
+    }
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var text = input.value.trim();
+    if(!text) return;
+    addUserMessage(text);
+    input.value = '';
+    var intent = matchIntent(text);
+    setTimeout(function(){
+      if(intent){ addBotIntentReply(intent); } else { addBotFallback(); }
+    }, reducedChat ? 0 : 260);
+  });
+
+  // La pastille d'invite (le petit point sur le bouton) ne s'affiche que si ce navigateur
+  // n'a jamais ouvert l'assistant — repli silencieux si localStorage est indisponible.
+  try{
+    if(window.localStorage.getItem('chouChatOpened') === '1' && ping && ping.parentNode){
+      ping.parentNode.removeChild(ping);
+    }
+  }catch(err){}
+
+  // Masque le widget tant que le menu mobile plein écran est ouvert, pour éviter deux éléments
+  // flottants superposés — sans toucher au gestionnaire de clic du hamburger déjà en place ailleurs.
+  var mobileMenuEl = document.getElementById('mobileMenu');
+  var chatWidgetEl = document.querySelector('.chat-widget');
+  if(mobileMenuEl && chatWidgetEl){
+    var syncChatWithMenu = function(){
+      chatWidgetEl.style.display = mobileMenuEl.classList.contains('open') ? 'none' : '';
+    };
+    syncChatWithMenu();
+    if('MutationObserver' in window){
+      new MutationObserver(syncChatWithMenu).observe(mobileMenuEl, { attributes:true, attributeFilter:['class'] });
+    } else {
+      var hamburgerFallback = document.getElementById('hamburger');
+      if(hamburgerFallback){ hamburgerFallback.addEventListener('click', function(){ setTimeout(syncChatWithMenu, 0); }); }
+      mobileMenuEl.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setTimeout(syncChatWithMenu, 0); }); });
+    }
+  }
+})();
+</script>
+</body>
+</html>
