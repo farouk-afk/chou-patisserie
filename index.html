@@ -1181,7 +1181,7 @@
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- Modale fiche produit + commande : contenu peuplé dynamiquement en JS depuis les .p-card de #carte.
-     Le PayPal proposé ci-dessous est une préférence de paiement affichée, pas une intégration réelle :
+     Le BaridiMob proposé ci-dessous est une préférence de paiement affichée, pas une intégration réelle :
      aucun paiement en ligne ne se produit sur cette page, la commande part par email. -->
 <div class="modal-backdrop" id="productModal" hidden>
   <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
@@ -1279,11 +1279,11 @@
               <span>Virement bancaire</span>
             </label>
             <label class="radio-pill">
-              <input type="radio" name="paiement" value="paypal" id="paiementPaypal" aria-describedby="errPaiement">
-              <span>PayPal</span>
+              <input type="radio" name="paiement" value="baridimob" id="paiementBaridimob" aria-describedby="errPaiement">
+              <span>BaridiMob</span>
             </label>
           </div>
-          <p class="radio-note">Pour PayPal : lien à confirmer avec le pâtissier — aucun paiement en ligne n'est disponible sur ce site pour le moment.</p>
+          <p class="radio-note">Pour BaridiMob : coordonnées à confirmer avec le pâtissier — aucun paiement en ligne n'est disponible sur ce site pour le moment.</p>
           <span class="field-error" id="errPaiement"></span>
         </div>
 
@@ -1789,6 +1789,15 @@
       if(!email){ setError('errEmail', 'Merci d’indiquer ton adresse email.', orderEmail, focusState); valid = false; }
       else if(!emailPattern.test(email)){ setError('errEmail', 'Cette adresse email ne semble pas valide.', orderEmail, focusState); valid = false; }
       if(!date){ setError('errDate', 'Merci de choisir une date souhaitée.', orderDate, focusState); valid = false; }
+      else {
+        var chosenDate = new Date(date + 'T00:00:00');
+        var minAllowedDate = computeMinDate(currentProduct.prep);
+        minAllowedDate.setHours(0, 0, 0, 0);
+        if(chosenDate < minAllowedDate){
+          setError('errDate', 'Cette date est déjà passée ou trop proche — choisis une date à partir du ' + toFRDate(minAllowedDate) + '.', orderDate, focusState);
+          valid = false;
+        }
+      }
       if(!paiement){ setError('errPaiement', 'Merci de choisir un mode de paiement.', document.getElementById('paiementEspeces'), focusState); valid = false; }
       if(retrait && retrait.value === 'livraison' && !address){
         setError('errAddress', 'Merci d’indiquer une adresse de livraison.', orderAddress, focusState); valid = false;
@@ -1814,7 +1823,7 @@
       var paiementLabels = {
         especes: 'Espèces à la livraison / au retrait',
         virement: 'Virement bancaire',
-        paypal: 'PayPal (lien à confirmer avec le pâtissier)'
+        baridimob: 'BaridiMob (coordonnées à confirmer avec le pâtissier)'
       };
 
       var subject = 'Commande Chou — ' + currentProduct.name + ' x' + qty;
@@ -2136,8 +2145,8 @@
     {
       id: 'paiement',
       label: 'Moyens de paiement',
-      keywords: ['paiement', 'payer', 'paypal', 'virement', 'especes', 'carte bancaire', ' cb ', 'mode de paiement', 'comment payer'],
-      reply: "Espèces à la livraison ou au retrait, virement bancaire, ou PayPal à confirmer ensemble. Aucune carte bancaire n'est demandée sur le site."
+      keywords: ['paiement', 'payer', 'baridimob', 'baridi mob', 'virement', 'especes', 'carte bancaire', ' cb ', 'mode de paiement', 'comment payer'],
+      reply: "Espèces à la livraison ou au retrait, virement bancaire, ou BaridiMob à confirmer ensemble. Aucune carte bancaire n'est demandée sur le site."
     },
     {
       id: 'prix',
