@@ -38,6 +38,10 @@ Accessibilité de la modale : `role="dialog" aria-modal="true"`, focus déplacé
 - **Mobile (`≤640px`)** : le panneau devient une feuille quasi pleine largeur ancrée en bas (`left/right:16px`), toujours dans la marge minimale de 16px exigée par le projet ; le widget se masque tant que `.mobile-menu` plein écran est ouvert (écouteur dédié sur le clic du hamburger, sans toucher à son gestionnaire existant).
 - Ce bloc JS est volontairement un second `<script>` séparé (IIFE distincte) après le script principal, pour ne jamais s'entremêler avec la modale/le filtre/le parallax — toute nouvelle intention ou tout nouveau comportement du chat doit rester dans ce bloc.
 
+## Empilement (z-index)
+
+Le curseur personnalisé (`.cursor-dot`/`.cursor-ring`) doit toujours rester au-dessus de tout le reste (`z-index:1200`) car `body.cursor-active` désactive le curseur natif du système dès qu'un pointeur fin est détecté — s'il passe sous un élément à `z-index` plus élevé (ex. une modale), il n'y a alors **plus aucun curseur visible du tout**. C'est exactement le bug corrigé une fois : `.modal-backdrop` (`z-index:1000`) passait au-dessus du curseur (`z-index:999`). Ordre actuel du plus bas au plus haut : `.mobile-menu` (90) → nav (100) → `.chat-widget`/`.chat-panel` (400) → `.modal-backdrop` (1000) → `.cursor-dot`/`.cursor-ring` (1200, toujours en dernier). Toute nouvelle couche `position:fixed` doit rester sous 1200, ou le curseur personnalisé doit être remonté en conséquence.
+
 ## Conventions
 
 - Copy en français partout (marché francophone).
