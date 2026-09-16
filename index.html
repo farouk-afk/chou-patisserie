@@ -441,6 +441,14 @@
   }
   .field textarea{ resize:vertical; min-height:76px; }
   .field input:focus, .field textarea:focus{ border-color:var(--caramel); background:var(--paper); }
+  .phone-field{ display:flex; align-items:stretch; }
+  .phone-field .phone-prefix{
+    display:flex; align-items:center; gap:6px; flex-shrink:0; white-space:nowrap;
+    font-family:inherit; font-size:0.95rem; color:var(--cacao-soft);
+    background:var(--cream-deep); border:1px solid var(--line); border-right:none;
+    border-radius:14px 0 0 14px; padding:12px 10px 12px 14px;
+  }
+  .field .phone-field input[type="tel"]{ border-radius:0 14px 14px 0; flex:1; min-width:0; }
   .field input:focus-visible, .field textarea:focus-visible{ outline:2px solid var(--caramel); outline-offset:2px; }
   .field-help{ font-size:0.78rem; font-weight:500; color:var(--cacao-soft); }
   .field-error{ display:block; font-size:0.8125rem; color:var(--rose-deep); font-weight:600; min-height:1em; }
@@ -1219,7 +1227,10 @@
         </div>
         <div class="field">
           <label for="orderPhone">Téléphone</label>
-          <input type="tel" id="orderPhone" name="orderPhone" autocomplete="tel" required aria-describedby="errPhone">
+          <div class="phone-field">
+            <span class="phone-prefix" id="phonePrefixHint">🇩🇿 +213</span>
+            <input type="tel" id="orderPhone" name="orderPhone" autocomplete="tel" required aria-describedby="phonePrefixHint errPhone" placeholder="555 52 80 51">
+          </div>
           <span class="field-error" id="errPhone"></span>
         </div>
         <div class="field">
@@ -1785,6 +1796,11 @@
 
       if(!valid) return;
 
+      // Le champ ne contient que le numéro local (le préfixe +213 est un élément fixe affiché
+      // à côté, jamais tapé par le client) — on reconstruit le numéro complet ici pour l'email/
+      // mailto, en retirant un éventuel 0 initial redondant avec l'indicatif international.
+      var fullPhone = '+213 ' + phoneDigits.replace(/^0+/, '');
+
       var qty = currentProduct.qty || 1;
       var priceInfo = parsePrice(currentProduct.price);
       var totalText;
@@ -1812,7 +1828,7 @@
         'Temps de préparation : ' + currentProduct.prep,
         '',
         'Nom complet : ' + name,
-        'Téléphone : ' + phone,
+        'Téléphone : ' + fullPhone,
         'Email : ' + email,
         'Mode de retrait : ' + retraitLabel + (retrait.value === 'livraison' ? ('\nAdresse de livraison : ' + address) : ''),
         'Date souhaitée : ' + toFRDate(new Date(date + 'T00:00:00')),
@@ -1839,7 +1855,7 @@
           total: totalText,
           prep_time: currentProduct.prep,
           customer_name: name,
-          customer_phone: phone,
+          customer_phone: fullPhone,
           customer_email: email,
           pickup_mode: retraitLabel,
           delivery_address: retrait.value === 'livraison' ? address : '—',
