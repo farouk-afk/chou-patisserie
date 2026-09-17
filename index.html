@@ -1527,6 +1527,11 @@
     var orderAddress = document.getElementById('orderAddress');
     var addressWrapper = document.getElementById('addressWrapper');
     var orderDate = document.getElementById('orderDate');
+    // Sur mobile, le sélecteur de date natif (iOS/Android) peut rester affiché/actif juste après
+    // le choix d'une date et intercepter le tap suivant (ex. sur "Envoyer la commande" juste en
+    // dessous), donnant l'impression qu'il se rouvre tout seul. Le blur() force sa fermeture dès
+    // que la date est choisie, avant que l'utilisateur ne tape ailleurs.
+    orderDate.addEventListener('change', function(){ orderDate.blur(); });
     var dateHelper = document.getElementById('dateHelper');
     var orderMessage = document.getElementById('orderMessage');
     var modalConfirmClose = document.getElementById('modalConfirmClose');
